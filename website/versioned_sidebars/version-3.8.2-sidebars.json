@@ -1,0 +1,12 @@
+{
+  "version-3.8.2-docs": {
+    "Server administration": [
+      "version-3.8.2-install-debian",
+      "version-3.8.2-feature-flags"
+    ],
+    "Managing queues": [
+      "version-3.8.2-quorum-queues"
+    ]
+  },
+  "version-3.8.2-docs-other": {}
+}
