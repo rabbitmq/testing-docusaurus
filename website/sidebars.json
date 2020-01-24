@@ -4,8 +4,10 @@
 	    "install-debian",
 	    "feature-flags"
     ],
-    "Managing queues": [
-	    "quorum-queues"
+    "Queue types": [
+	    "quorum-queues",
+	    "streaming-queues",
+	    "random-queues"
     ]
   },
   "docs-other": {

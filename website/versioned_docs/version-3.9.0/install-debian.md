@@ -1,6 +1,7 @@
 ---
-id: install-debian
+id: version-3.9.0-install-debian
 title: Installing on Debian
+original_id: install-debian
 ---
 
 # Installing on Debian and Ubuntu

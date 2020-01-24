@@ -1,0 +1,13 @@
+{
+  "version-3.9.0-docs": {
+    "Server administration": [
+      "version-3.9.0-install-debian",
+      "version-3.9.0-feature-flags"
+    ],
+    "Queue types": [
+      "version-3.9.0-quorum-queues",
+      "version-3.9.0-streaming-queues"
+    ]
+  },
+  "version-3.9.0-docs-other": {}
+}
