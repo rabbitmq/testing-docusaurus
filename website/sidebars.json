@@ -1,0 +1,13 @@
+{
+  "docs": {
+    "Server administration": [
+	    "install-debian",
+	    "feature-flags"
+    ],
+    "Managing queues": [
+	    "quorum-queues"
+    ]
+  },
+  "docs-other": {
+  }
+}
