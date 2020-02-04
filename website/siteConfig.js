@@ -46,7 +46,7 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/logo/rabbit-only-white.svg',
+  headerIcon: 'img/logo/rabbit-name-company-orange.svg',
   footerIcon: 'img/logo/rabbit-only-white.svg',
   favicon: 'img/favicon.ico',
 
@@ -54,22 +54,19 @@ const siteConfig = {
   colors: {
     primaryColor: '#f60',
     secondaryColor: '#587907',
+    textColor: '#585858',
   },
 
   /* Custom fonts for website */
-  /*fonts: {
+  fonts: {
     myFont: [
       "Raleway",
       "sans-serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
     ]
-  },*/
+  },
 
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i&display=swap"
+    "https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,700,700i&display=swap"
   ],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.

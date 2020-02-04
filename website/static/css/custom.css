@@ -6,6 +6,72 @@
  */
  
 /* your custom css */
+body {
+  font-family: $myFont;
+  line-height: 1.6em;
+  color: $textColor;
+}
+
+/* -------------------------------------------------------------------
+ * Header.
+ * ------------------------------------------------------------------- */
+
+.fixedHeaderContainer {
+  background: white;
+  border-bottom: $primaryColor 18px solid;
+  padding: 0px;
+}
+
+.fixedHeaderContainer a {
+  height: auto;
+}
+
+.fixedHeaderContainer .logo {
+  margin: 21px 0 20px;
+  height: 28px;
+}
+
+.fixedHeaderContainer header .headerTitleWithLogo {
+  display: none;
+}
+
+.fixedHeaderContainer header h3 {
+  color: $textColor;
+}
+
+@media (max-width: 480px) {
+  .headerTitleWithLogo {
+    display: block !important;
+  }
+}
+
+/* -------------------------------------------------------------------
+ * Main navigation.
+ * ------------------------------------------------------------------- */
+
+/*.navigationSlider {
+  height: auto;
+}*/
+
+/*.navigationSlider nav.slidingNav {
+  height: 100%;
+}*/
+
+.navigationSlider .slidingNav ul {
+  padding: 5px 0;
+}
+
+.navigationSlider .slidingNav ul li a {
+  font-size: 16px;
+  font-weight: 500;
+  color: $textColor;
+  background-color: inherit;
+  border-right: 1px solid $primaryColor;
+  padding: 22px 24px;
+  display: inline-block;
+  height: auto;
+  line-height: 1.6em;
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
