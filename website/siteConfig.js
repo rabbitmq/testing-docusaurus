@@ -46,8 +46,8 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
+  headerIcon: 'img/logo/rabbit-only-white.svg',
+  footerIcon: 'img/logo/rabbit-only-white.svg',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
@@ -73,7 +73,7 @@ const siteConfig = {
   ],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Pivotal Software Inc.`,
+  copyright: `Copyright © ${new Date().getFullYear()} Pivotal Software Inc., now part of VMware`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
