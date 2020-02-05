@@ -1,8 +1,10 @@
+/* vim:sw=2:et: */
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
+ *
  */
  
 /* your custom css */
@@ -20,15 +22,20 @@ body {
   background: white;
   border-bottom: $primaryColor 18px solid;
   padding: 0px;
+  position: static;
+}
+
+.fixedHeaderContainer .headerWrapper {
 }
 
 .fixedHeaderContainer a {
   height: auto;
+  align-items: center;
 }
 
 .fixedHeaderContainer .logo {
-  margin: 21px 0 20px;
-  height: 28px;
+  width: 238px;
+  height: auto;
 }
 
 .fixedHeaderContainer header .headerTitleWithLogo {
@@ -39,9 +46,22 @@ body {
   color: $textColor;
 }
 
-@media (max-width: 480px) {
-  .headerTitleWithLogo {
-    display: block !important;
+@media only screen and (max-width: 1023px) {
+  .fixedHeaderContainer header {
+    flex-wrap: wrap;
+  }
+
+  .fixedHeaderContainer .headerWrapper {
+    padding: 0;
+  }
+
+  .fixedHeaderContainer a {
+    min-height: 70px;
+  }
+
+  .fixedHeaderContainer .logo {
+    padding-left: 15px;
+    width: 170px;
   }
 }
 
@@ -49,16 +69,8 @@ body {
  * Main navigation.
  * ------------------------------------------------------------------- */
 
-/*.navigationSlider {
+.navigationSlider {
   height: auto;
-}*/
-
-/*.navigationSlider nav.slidingNav {
-  height: 100%;
-}*/
-
-.navigationSlider .slidingNav ul {
-  padding: 5px 0;
 }
 
 .navigationSlider .slidingNav ul li a {
@@ -72,6 +84,223 @@ body {
   height: auto;
   line-height: 1.6em;
 }
+
+.navigationSlider .slidingNav ul li:last-child a {
+  border-right: 0;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive > a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  background-color: inherit;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive > a:hover,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a:hover {
+  background-color: $primaryColor;
+}
+
+@media only screen and (min-width: 1024px) {
+  .navigationSlider .slidingNav ul li.siteNavItemActive a,
+  .navigationSlider .slidingNav ul li.siteNavGroupActive a {
+    color: $textColor;
+  }
+
+  .navigationSlider .slidingNav ul li.siteNavItemActive a:hover,
+  .navigationSlider .slidingNav ul li.siteNavGroupActive a:hover {
+    color: $primaryBg;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .navigationSlider {
+    width: 100%;
+    display: none; /* FIXME */
+  }
+
+  .navigationSlider .slidingNav {
+    position: static;
+  }
+
+  .navigationSlider .slidingNav ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+    border-top: $primaryColor 18px solid;
+    background-color: $primaryBg;
+  }
+
+  .navigationSlider .slidingNav ul li {
+  }
+
+  .navigationSlider .slidingNav ul li a {
+    border-right: none;
+    border-bottom: 1px solid $primaryColor;
+    width: 100%;
+    font-size: 20px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    min-height: 60px;
+  }
+
+  .navigationSlider .slidingNav ul li > a:active,
+  .navigationSlider .slidingNav ul li > a:focus,
+  .navigationSlider .slidingNav ul li > a:hover,
+  .navigationSlider .slidingNav ul li > a:active,
+  .navigationSlider .slidingNav ul li > a:focus,
+  .navigationSlider .slidingNav ul li > a:hover {
+    background-color: $primaryBg;
+  }
+}
+
+/* -------------------------------------------------------------------
+ * Search.
+ * ------------------------------------------------------------------- */
+
+input#search_input_react {
+  background-color: $primaryBg;
+}
+
+.navSearchWrapper::before {
+  border-color: $textColor;
+}
+
+.navSearchWrapper::after {
+  background-color: $textColor;
+}
+
+input::placeholder {
+  color: $textColor;
+}
+
+input#search_input_react:focus,
+input#search_input_react:active {
+  color: $textColor;
+}
+
+@media only screen and (max-width: 1023px) {
+  .navSearchWrapper {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    min-height: 60px;
+  }
+
+  .reactNavSearchWrapper input#search_input_react,
+  .reactNavSearchWrapper input#search_input_react:active,
+  .reactNavSearchWrapper input#search_input_react:focus {
+    color: $textColor;
+    background-color: $primaryBg;
+  }
+}
+
+/* -------------------------------------------------------------------
+ * Content area.
+ * ------------------------------------------------------------------- */
+
+.navPusher {
+  padding-top: 40px;
+}
+
+.onPageNav {
+  top: 20px;
+  max-height: calc(100vh - 50px);
+}
+
+.docsNavContainer .toc .navBreadcrumb {
+  background-color: $secondaryBg;
+}
+
+.toc .toggleNav,
+.toc .toggleNav .navGroup .navGroupCategoryTitle,
+.navBreadcrumb a, .navBreadcrumb span {
+  color: $textColor;
+}
+
+.line1, .line2, .line3 {
+  background-color: $textColor;
+}
+
+@media only screen and (max-width: 1023px) {
+  .navPusher {
+    padding-top: 0;
+  }
+
+  .docsNavContainer {
+    position: static;
+  }
+
+  .wrapper {
+    padding: 0;
+  }
+
+  .mainContainer {
+    padding: 35px 20px 0px 20px;
+  }
+
+  .docsContainer .wrapper .post .postHeader::before,
+  .docsContainer .wrapper .post .postHeaderTitle::before {
+    height: auto;
+    margin-top: 0;
+  }
+
+  .docsSliderActive.docsNavContainer {
+    padding-bottom: 0;
+  }
+
+  .docsSliderActive .toc .navBreadcrumb,
+  .tocActive .navBreadcrumb {
+    position: static;
+  }
+
+  .docsSliderActive .toc section .navGroups {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+/* -------------------------------------------------------------------
+ * Footer.
+ * ------------------------------------------------------------------- */
+
+.nav-footer {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-footer .fbOpenSource {
+  display: none;
+}
+
+@media only screen and (max-width: 735px) {
+  .nav-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-footer .sitemap .nav-home {
+    padding-left: 0px;
+    width: auto;
+    height: auto;
+  }
+
+  .nav-footer .sitemap .nav-home img {
+    width: auto;
+    height: 50px;
+  }
+
+  .nav-footer .copyright {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-footer .sitemap {
+    margin-bottom: 0.5em;
+  }
+}
+
+/* ------------------------------------------------------------------- */
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }

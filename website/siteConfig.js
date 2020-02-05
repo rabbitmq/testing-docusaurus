@@ -1,3 +1,4 @@
+/* vim:sw=2:et: */
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *
@@ -38,8 +39,12 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    {href: '/#features', label: 'Features'},
+    {href: '/#get-started', label: 'Get Started'},
+    {href: '/#support', label: 'Support'},
+    {href: '/#community', label: 'Community'},
     {doc: 'install-debian', label: 'Docs'},
-    {blog: true, label: 'Blog'},
+    {blog: true, label: 'Blog'}
   ],
 
   // If you have users set above, you add it here:
@@ -53,7 +58,9 @@ const siteConfig = {
   /* Colors for website */
   colors: {
     primaryColor: '#f60',
-    secondaryColor: '#587907',
+    secondaryColor: '#866e8b',
+    primaryBg: '#fff',
+    secondaryBg: '#f9fafb',
     textColor: '#585858',
   },
 
@@ -66,7 +73,7 @@ const siteConfig = {
   },
 
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,700,700i&display=swap"
+    "https://fonts.googleapis.com/css?family=Raleway:400,400i,500,700,700i&display=swap"
   ],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
@@ -97,11 +104,17 @@ const siteConfig = {
   // enableUpdateBy: true,
 
   // Show documentation's last update time.
-  // enableUpdateTime: true,
+  enableUpdateTime: true,
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
+
+  algolia: {
+    apiKey: 'my-api-key',
+    indexName: 'my-index-name',
+    algoliaOptions: {} // Optional, if provided by Algolia
+  },
 };
 
 module.exports = siteConfig;
