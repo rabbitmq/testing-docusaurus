@@ -1,4 +1,4 @@
-/* vim:sw=2:et: */
+// vim:sw=2:et:
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *
@@ -85,7 +85,10 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    '/js/navbar.js',
+    //'https://buttons.github.io/buttons.js',
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',

@@ -1,4 +1,4 @@
-/* vim:sw=2:et: */
+/* vim: set sw=2: set et: */
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *
@@ -49,6 +49,7 @@ body {
 @media only screen and (max-width: 1023px) {
   .fixedHeaderContainer header {
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .fixedHeaderContainer .headerWrapper {
@@ -100,6 +101,10 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
+  .headerWrapper .navToggle {
+    display: none;
+  }
+
   .navigationSlider .slidingNav ul li.siteNavItemActive a,
   .navigationSlider .slidingNav ul li.siteNavGroupActive a {
     color: $textColor;
@@ -114,7 +119,22 @@ body {
 @media only screen and (max-width: 1023px) {
   .navigationSlider {
     width: 100%;
-    display: none; /* FIXME */
+    display: none;
+  }
+
+  .navigationSliderActive {
+    display: block;
+  }
+
+  .headerWrapper .navToggle {
+    display: block;
+    cursor: pointer;
+    height: 32px;
+    margin-left: auto;
+    margin-right: 15px;
+    position: relative;
+    text-align: left;
+    width: 18px;
   }
 
   .navigationSlider .slidingNav {
@@ -218,8 +238,13 @@ input#search_input_react:active {
   color: $textColor;
 }
 
+.navBreadcrumb i {
+  font-style: normal;
+}
+
 .line1, .line2, .line3 {
   background-color: $textColor;
+  transition: 0s;
 }
 
 @media only screen and (max-width: 1023px) {
