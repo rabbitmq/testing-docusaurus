@@ -1,6 +1,6 @@
 ---
-id: high-availability
-title: High Availability
+id: protocols
+title: Protocols
 ---
 
 TODO
