@@ -518,6 +518,41 @@ input#search_input_react:active {
   margin: 0 0 10px;
 }
 
+/* -------------------------------------------------------------------
+ * Tiles (to introduce half a dozen pages).
+ * ------------------------------------------------------------------- */
+
+.tiles + ul {
+  display: flex;
+  padding-left: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tiles + ul li {
+  list-style-type: none;
+  margin: 8px;
+  padding: 10px 0;
+  width: 200px;
+  border: solid 1px $primaryColor;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.tiles + ul img {
+  height: 60px;
+}
+
+.tiles + ul a {
+  color: $textColor;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 /* ------------------------------------------------------------------- */
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
