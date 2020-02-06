@@ -247,7 +247,6 @@ input#search_input_react:active {
 }
 
 .docsNavContainer {
-  margin-top: 20px;
   top: 20px;
 }
 
@@ -283,6 +282,12 @@ input#search_input_react:active {
 .line1, .line2, .line3 {
   background-color: $textColor;
   transition: 0s;
+}
+
+@media only screen and (min-width: 1024px) {
+  .docsNavContainer {
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
