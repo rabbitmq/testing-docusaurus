@@ -43,7 +43,7 @@ const siteConfig = {
     {href: '/#get-started', label: 'Get Started'},
     {href: '/#support', label: 'Support'},
     {href: '/#community', label: 'Community'},
-    {doc: 'install-debian', label: 'Docs'},
+    {doc: 'overview/index', label: 'Docs'},
     {blog: true, label: 'Blog'}
   ],
 

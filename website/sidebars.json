@@ -1,15 +1,25 @@
 {
   "docs": {
-    "Server administration": [
-	    "install-debian",
-	    "feature-flags"
-    ],
-    "Queue types": [
-	    "quorum-queues",
-	    "streaming-queues",
-	    "random-queues"
-    ]
-  },
-  "docs-other": {
+    "Overview": ["overview/index", "overview/intro"],
+    "Concepts": ["concepts/index", 
+      "concepts/communication-patterns",
+      {
+        "type": "subcategory",
+        "label": "RabbitMQ Concepts",
+        "ids": [
+          "concepts/rabbitmqway/index",
+          "concepts/rabbitmqway/routing",
+          "concepts/rabbitmqway/queues",
+          "concepts/rabbitmqway/connections",
+          "concepts/rabbitmqway/consumers"
+        ]
+      },
+      "concepts/reliable-messaging",
+      "concepts/high-availability",
+      "concepts/protocols",
+      "concepts/moving-messages"],
+    "Developer Guide": ["developer-guide/index"],
+    "Operations Guide": ["operations-guide/index"],
+    "Enterprise Edition": ["enterprise/index"]
   }
 }
