@@ -1,3 +1,4 @@
+// vim:sw=2:et:
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *
@@ -12,6 +13,26 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
+
+class HomeHero extends React.Component {
+  render() {
+    return (
+      <div id="hero">
+        <div className='container'>
+          <div id='hero-pipeline-webinar'>
+            <div className='container'>
+              <div className='text'>
+                <h1>Streaming Pipelines</h1>
+                <h2>A webinar on using RabbitMQ and Project Reactor</h2>
+                <h2>Feb 13 | <a href="https://content.pivotal.io/rabbitmq/feb-13-how-to-build-reliable-streaming-pipelines-with-rabbitmq-and-project-reactor-webinar?utm_campaign=reactor-streaming-webinar-banner&amp;utm_source=rabbitmq&amp;utm_medium=website">Register today</a></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 class HomeSplash extends React.Component {
   render() {
@@ -195,6 +216,7 @@ class Index extends React.Component {
 
     return (
       <div>
+        <HomeHero siteConfig={siteConfig} language={language} />
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />

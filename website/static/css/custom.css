@@ -15,6 +15,23 @@ body {
 }
 
 /* -------------------------------------------------------------------
+ * General styling.
+ * ------------------------------------------------------------------- */
+
+h1 {
+  font-size: 38px;
+}
+
+h1, h2 {
+  margin-top: 20px;
+  margin-bottom: .5em;
+}
+
+a {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------
  * Header.
  * ------------------------------------------------------------------- */
 
@@ -23,9 +40,6 @@ body {
   border-bottom: $primaryColor 18px solid;
   padding: 0px;
   position: static;
-}
-
-.fixedHeaderContainer .headerWrapper {
 }
 
 .fixedHeaderContainer a {
@@ -72,6 +86,10 @@ body {
 
 .navigationSlider {
   height: auto;
+}
+
+.navigationSlider a {
+  text-decoration: none;
 }
 
 .navigationSlider .slidingNav ul li a {
@@ -220,10 +238,11 @@ input#search_input_react:active {
  * ------------------------------------------------------------------- */
 
 .navPusher {
-  padding-top: 40px;
+  padding-top: 0;
 }
 
 .docsNavContainer {
+  margin-top: 20px;
   top: 20px;
 }
 
@@ -232,8 +251,14 @@ input#search_input_react:active {
 }
 
 .onPageNav {
+  margin-top: 20px;
   top: 20px;
   max-height: calc(100vh - 50px);
+}
+
+.docsNavContainer a,
+.onPageNav a {
+  text-decoration: none;
 }
 
 .docsNavContainer .toc .navBreadcrumb {
@@ -302,6 +327,9 @@ input#search_input_react:active {
   padding-right: 20px;
 }
 
+.nav-footer a {
+  text-decoration: none;
+}
 .nav-footer .fbOpenSource {
   display: none;
 }
@@ -330,6 +358,125 @@ input#search_input_react:active {
 
   .nav-footer .sitemap {
     margin-bottom: 0.5em;
+  }
+}
+
+/* -------------------------------------------------------------------
+ * Home hero.
+ * ------------------------------------------------------------------- */
+
+#hero {
+  background-color: $secondaryBg;
+}
+
+#hero .container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+#hero #hero-pipeline-webinar,
+#hero #hero-laika-case-study {
+  background: url(/img/home/banner/laika/Laika-pc.svg) no-repeat bottom right;
+  padding: 83px 0 55px;
+}
+
+#hero #hero-pipeline-webinar {
+  background: url(../img/home/banner/pipeline/pipeline-desktop.svg) no-repeat bottom right;
+  background-size: cover;
+}
+
+#hero #hero-pipeline-webinar .container,
+#hero #hero-laika-case-study .container {
+  /*max-width: 400px;*/
+  padding: 0 20px;
+}
+
+#hero #hero-pipeline-webinar .text,
+#hero #hero-laika-case-study .text {
+  max-width: 400px;
+}
+
+#hero #hero-pipeline-webinar h1,
+#hero #hero-pipeline-webinar h2,
+#hero #hero-laika-case-study h1,
+#hero #hero-laika-case-study h2 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #585859; 
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+#hero #hero-pipeline-webinar h2,
+#hero #hero-laika-case-study h2 {
+  font-size: 20px;
+}
+
+#hero #hero-pipeline-webinar h1 a,
+#hero #hero-pipeline-webinar h2 a,
+#hero #hero-laika-case-study h1 a,
+#hero #hero-laika-case-study h2 a {
+  font-weight: normal;
+}
+
+#hero #hero-laika-case-study h2 {
+  max-width: 350px;
+}
+
+#hero #hero-pipeline-webinar h2 {
+  max-width: 300px;
+}
+
+#hero #hero-pipeline-webinar h2:last-child,
+#hero #hero-laika-case-study h2:last-child {
+  margin-top: 0;
+}
+
+@media(max-width: 909px) {
+  #hero #hero-pipeline-webinar,
+  #hero #hero-laika-case-study {
+    background: url(../img/home/banner/laika/Laika-tab.svg) no-repeat bottom right;
+    padding: 70px 0;
+  }
+  #hero #hero-pipeline-webinar .container,
+  #hero #hero-laika-case-study .container {
+    overflow: hidden;
+  }
+  #hero #hero-pipeline-webinar {
+    background: url(../img/home/banner/pipeline/pipeline-tab.svg) no-repeat bottom right;
+    background-size: cover;
+  }
+}
+
+@media(max-width: 660px) {
+  #hero #hero-pipeline-webinar,
+  #hero #hero-laika-case-study {
+    background: url(../img/home/banner/laika/Laika-iphone.svg) no-repeat bottom right;
+    padding: 60px 0 150px;
+    background-size: 100%;
+  }
+  #hero #hero-pipeline-webinar .text,
+  #hero #hero-laika-case-study .text {
+    max-width: 260px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #hero #hero-pipeline-webinar {
+    background: url(../img/home/banner/pipeline/pipeline-phone.svg) no-repeat bottom right;
+    background-size: 100%;
+    padding-bottom: 300px;
+  }
+}
+
+@media(max-width: 500px) {
+  #hero #hero-pipeline-webinar {
+    padding-bottom: 220px;
+  }
+}
+
+@media(max-width: 390px) {
+  #hero #hero-pipeline-webinar {
+    padding-bottom: 170px;
   }
 }
 
