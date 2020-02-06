@@ -1,3 +1,4 @@
+// vim:sw=2:et:
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *
@@ -12,6 +13,77 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
+
+class HomeHero extends React.Component {
+  render() {
+    return (
+      <div id="hero">
+        <div className='container'>
+          <div id='hero-pipeline-webinar'>
+            <div className='container'>
+              <div className='text'>
+                <h1>Streaming Pipelines</h1>
+                <h2>A webinar on using RabbitMQ and Project Reactor</h2>
+                <h2>Feb 13 | <a href="https://content.pivotal.io/rabbitmq/feb-13-how-to-build-reliable-streaming-pipelines-with-rabbitmq-and-project-reactor-webinar?utm_campaign=reactor-streaming-webinar-banner&amp;utm_source=rabbitmq&amp;utm_medium=website">Register today</a></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Intro extends React.Component {
+  render() {
+    return (
+      <div id='intro'>
+        <div className='container'>
+          <div className='column twothirds'>
+            <div className='inner'>
+              <h1>RabbitMQ is the most widely deployed open source message broker.</h1>
+              <p>
+                With tens of thousands of users, RabbitMQ is one of the most popular open source message brokers. From <a href="https://www.youtube.com/watch?v=1qcTu2QUtrU">T-Mobile</a>
+                to <a href="https://medium.com/@runtastic/messagebus-handling-dead-letters-in-rabbitmq-using-a-dead-letter-exchange-f070699b952b">Runtastic</a>, RabbitMQ is used worldwide at small startups and large enterprises.
+              </p>
+              <p>
+                RabbitMQ is lightweight and easy to deploy on premises
+                and in the cloud. It supports multiple messaging
+                protocols. RabbitMQ can be deployed in distributed and
+                federated configurations to meet high-scale,
+                high-availability requirements.
+              </p>
+              <p>
+                RabbitMQ runs on many operating systems and cloud
+                environments, and provides a <a href="/devtools.html">wide range of developer
+                tools for most popular languages</a>.
+              </p>
+              <p>
+                See how other people are using RabbitMQ:
+              </p>
+              <br/>
+              <div id="UfEmbeddedHub1501190831892"></div>
+              <p id='morelinkafterufembed'><a href='https://content.pivotal.io/rabbitmq'>More <span className="arrow"></span></a></p>
+            </div>
+          </div>
+          <div className='column onethird'>
+            <div className='container'>
+              <div id='releases'>
+                <h2>Updates</h2>
+                <p><a href='/news.html'>More updates<span className='arrow'></span></a></p>
+              </div>
+              <div id='twitterfeed'>
+                <h2>Tweets</h2>
+                <a className="twitter-timeline" href="https://twitter.com/RabbitMQ" data-chrome="noheader nofooter noborders transparent noscrollbar" data-tweet-limit='2'></a>
+                <p><a href='https://twitter.com/RabbitMQ'>More tweets<span className='arrow'></span></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 class HomeSplash extends React.Component {
   render() {
@@ -195,14 +267,9 @@ class Index extends React.Component {
 
     return (
       <div>
-        <HomeSplash siteConfig={siteConfig} language={language} />
+        <HomeHero siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          <Intro siteConfig={siteConfig} language={language} />
         </div>
       </div>
     );
