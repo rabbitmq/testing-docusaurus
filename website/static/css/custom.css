@@ -223,6 +223,14 @@ input#search_input_react:active {
   padding-top: 40px;
 }
 
+.docsNavContainer {
+  top: 20px;
+}
+
+.docsNavContainer .toc {
+  padding: 0;
+}
+
 .onPageNav {
   top: 20px;
   max-height: calc(100vh - 50px);
