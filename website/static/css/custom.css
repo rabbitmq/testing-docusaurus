@@ -31,6 +31,21 @@ a {
   text-decoration: underline;
 }
 
+.column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.twothirds {
+  max-width: 66%;
+  width: 100%;
+}
+
+.onethird {
+  max-width: 33%;
+  width: 100%;
+}
+
 /* -------------------------------------------------------------------
  * Header.
  * ------------------------------------------------------------------- */
@@ -108,29 +123,31 @@ a {
   border-right: 0;
 }
 
+.navigationSlider .slidingNav ul li > a:focus {
+  color: $textColor;
+  background-color: $primaryBg;
+}
+
+.navigationSlider .slidingNav ul li > a:hover {
+  color: $primaryBg;
+  background-color: $primaryColor;
+}
+
 .navigationSlider .slidingNav ul li.siteNavItemActive > a,
 .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  color: $textColor;
   background-color: inherit;
 }
 
 .navigationSlider .slidingNav ul li.siteNavItemActive > a:hover,
 .navigationSlider .slidingNav ul li.siteNavGroupActive > a:hover {
+  color: $primaryBg;
   background-color: $primaryColor;
 }
 
 @media only screen and (min-width: 1024px) {
   .headerWrapper .navToggle {
     display: none;
-  }
-
-  .navigationSlider .slidingNav ul li.siteNavItemActive a,
-  .navigationSlider .slidingNav ul li.siteNavGroupActive a {
-    color: $textColor;
-  }
-
-  .navigationSlider .slidingNav ul li.siteNavItemActive a:hover,
-  .navigationSlider .slidingNav ul li.siteNavGroupActive a:hover {
-    color: $primaryBg;
   }
 }
 
@@ -167,9 +184,6 @@ a {
     background-color: $primaryBg;
   }
 
-  .navigationSlider .slidingNav ul li {
-  }
-
   .navigationSlider .slidingNav ul li a {
     border-right: none;
     border-bottom: 1px solid $primaryColor;
@@ -179,15 +193,6 @@ a {
     display: flex;
     justify-content: flex-start;
     min-height: 60px;
-  }
-
-  .navigationSlider .slidingNav ul li > a:active,
-  .navigationSlider .slidingNav ul li > a:focus,
-  .navigationSlider .slidingNav ul li > a:hover,
-  .navigationSlider .slidingNav ul li > a:active,
-  .navigationSlider .slidingNav ul li > a:focus,
-  .navigationSlider .slidingNav ul li > a:hover {
-    background-color: $primaryBg;
   }
 }
 
@@ -488,6 +493,29 @@ input#search_input_react:active {
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#intro .twothirds {
+  max-width: 68%;
+}
+
+#intro .onethird {
+  border-left: 2px solid #ededed;
+  max-width: 31%;
+}
+
+#intro .onethird .container {
+  max-width: 260px;
+  float: right;
+}
+
+#intro h1 {
+  max-width: 530px;
+  margin: 0 0 40px;
+}
+
+#intro h2 {
+  margin: 0 0 10px;
 }
 
 /* ------------------------------------------------------------------- */
