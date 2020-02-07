@@ -31,24 +31,22 @@ a {
   text-decoration: underline;
 }
 
-.column {
-  display: inline-block;
-  vertical-align: top;
+.tiles {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.twothirds {
-  max-width: 66%;
-  width: 100%;
+.tile {
+  width: 30%;
+  margin: 0 10px 40px;
 }
 
-.onethird {
-  max-width: 33%;
-  width: 100%;
-}
-
-.fifty {
-  max-width: 49%;
-  width: 100%;
+@media only screen and (max-width: 1023px) {
+  .tile {
+    width: 290px;
+  }
 }
 
 .arrow {
@@ -61,25 +59,35 @@ a {
 
 .btn {
   border-radius: 3px;
-  background: #866e8b;
   color: white;
   text-decoration: none;
   font-size: 20px;
   padding: 13px 15px;
+  display: inline-block;
 }
 
-.btn:hover {
+.btn-secondary {
+  background: $secondaryColor;
+}
+
+.btn-secondary:hover {
   color: white;
   background: #58435D;
 }
 
-.orangebtn {
-  background: #FF6600;
+.btn-primary {
+  background: $primaryColor;
 }
 
-.orangebtn:hover {
+.btn-primary:hover {
   color: white;
   background: #D15503;
+}
+
+@media only screen and (max-width: 1023px) {
+  .btn {
+    font-size: 16px;
+  }
 }
 
 /* -------------------------------------------------------------------
@@ -431,15 +439,10 @@ input#search_input_react:active {
   background-size: cover;
 }
 
-#hero #hero-pipeline-webinar .container,
-#hero #hero-laika-case-study .container {
-  /*max-width: 400px;*/
-  padding: 0 20px;
-}
-
 #hero #hero-pipeline-webinar .text,
 #hero #hero-laika-case-study .text {
   max-width: 400px;
+  padding: 0 15px;
 }
 
 #hero #hero-pipeline-webinar h1,
@@ -530,26 +533,33 @@ input#search_input_react:active {
  * Home page.
  * ------------------------------------------------------------------- */
 
+.home-section {
+  max-width: 1180px;
+  margin: 40px auto 0;
+}
+
+.home-section h1 {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1023px) {
+  .home-section {
+    padding: 0 15px;
+  }
+}
+
 #intro {
   max-width: 1180px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px 0 30px;
-  border-bottom: solid 2px #ededed;
+  margin: 40px auto;
+  border-bottom: solid 2px $lineColor;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0 15px;
 }
 
-#intro .twothirds {
-  max-width: 68%;
-}
-
-#intro .onethird {
-  border-left: 2px solid #ededed;
-  max-width: 31%;
-}
-
-#intro .onethird .container {
-  max-width: 260px;
-  float: right;
+#intro #description {
+  width: 68%;
 }
 
 #intro h1 {
@@ -573,121 +583,101 @@ input#search_input_react:active {
   margin-bottom: 0 !important;
 }
 
+.hubs-embedded  #collection-items {
+  width: 100% !important;
+}
+
+.hubs-embedded  #collection-items ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hubs-embedded  #collection-items ul li {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .hubs-embedded a {
-  color: #FF6600 !important;
+  color: $primaryColor !important;
   text-decoration: underline !important;
-}
-
-.hubs-embedded .tile {
-  width: 201px !important;
-}
-
-.hubs-embedded  .share-single,
-.hubs-embedded  #collection-items .tile.single .img,
-.hubs-embedded .friendly-timestamp .timeago,
-.hubs-embedded  .tile.single .icon {
-  display: none !important;
 }
 
 .hubs-embedded .tile.single .description h3.h3like {
   font-weight: 400 !important;
 }
 
-.hubs-embedded  div.tile.single>a.view,
+.hubs-embedded div.tile.single>a.view,
 .hubs-embedded li.tile.single>a.view {
   padding-left: 20px !important;
   background-image: none !important;
 }
 
-.hubs-embedded #collection-items .tile.single .description .friendly-timestamp {
-  margin: 20px 0 0 20px !important;
-}
-
-.hubs-embedded #collection-items .tile:first-child {
-  margin-left: 0 !important;
-}
-
-.hubs-embedded #collection-items .tile:nth-child(3) {
-  margin-right: 0 !important;
-}
-
-.hubs-embedded  #collection-items {
-  width: 99.8% !important;
-}
-
-.hubs-embedded  .tile.single>a.view {
-  background-color: white;
-  color: #00b5a3;
-  font-weight: 400;
-  z-index: 0;
-}
-
-.hubs-embedded  .tile.single>a.view:after {
+.hubs-embedded .tile.single>a.view:after {
   background: transparent url(/img/arrow.svg) left top no-repeat !important;
   top: 15px !important;
   width: 20px;
   height: 10px;
 }
 
-.hubs-embedded  .tile.single {
-  height: 200px !important;
-}
-
-.hubs-embedded  .tile.single  .description {
-  top: 0;
-}
-
-.hubs-embedded  .tile.single  .description  h4.avatar {
-  height: 100px !important;
-  overflow: hidden;
-}
-
 /* Updates. */
-#releases .docsNavContainer {
+#intro #news {
+  width: 31%;
+  padding-left: 40px;
+  border-left: 2px solid $lineColor;
+}
+
+#updates .docsNavContainer {
   position: static;
   height: auto;
   margin-top: 0;
 }
 
-#releases .toc section .navGroups {
-  padding-top: 0;
+#updates .toc section .navGroups {
+  padding: 0;
 }
 
-#releases .toc .toggleNav .navGroup {
+#updates .toc .toggleNav .navGroup {
   margin-bottom: 0;
 }
 
-#releases .navGroupCategoryTitle {
+#updates .navGroupCategoryTitle {
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 10px;
 }
 
-#releases ul {
+#updates ul {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 1023px) {
+  #intro #description {
+    width: auto;
+  }
+
+  .hubs-embedded  #collection-items ul {
+    justify-content: center;
+  }
+
+  #intro #news {
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  #intro #news .docsNavContainer .toc .navBreadcrumb {
+    display: none;
+  }
+
+  #intro #news .toc section .navGroups {
+    display: block;
+  }
+}
+
 /* Features. */
-#features {
-  max-width: 1180px;
-  margin: 80px auto;
-}
-
-#features .features {
-  margin: 60px 0 0;
-}
-
-#features .feature {
-  margin: 0 0 60px;
-}
-
-#features .feature .inner {
-  max-width: 290px;
-  padding-right: 40px;
-}
-
-#features .feature:nth-child(3n) .inner {
-  padding-right: 0;
+#features .tile img {
+  width: 71px;
+  height: 62px;
 }
 
 /* Get started. */
@@ -695,40 +685,113 @@ input#search_input_react:active {
   background-color: $secondaryBg;
 }
 
-#getstarted > .container {
-  max-width: 1180px;
-  padding: 60px 0 30px;
+#getstarted .home-section {
+  padding-top: 40px;
 }
 
-#getstarted .container {
-  margin-left: auto;
-  margin-right: auto;
+#getstarted .tiles {
+  margin-top: 60px;
+}
+
+#getstarted .tile {
+  text-align: center;
 }
 
 #getstarted p {
   margin-top: 35px;
 }
 
-#getstarted .fifty .inner {
-  padding: 50px 0;
+/* Commercial support. */
+#commercial-items {
+  height: 430px;
+  margin-top: 40px;
+  padding-left: 295px;
+  background: url(/img/commercial/commercial-services.svg) no-repeat left center;
 }
 
-#getstarted .fifty .container {
-  max-width: 320px;
+#support img {
+  display: none;
+}
+
+#commercial-distribution-phone {
+  width: 88px;
+  height: 111px;
+}
+
+#support-and-hosting-phone {
+  width: 109px;
+  height: 94px;
+}
+
+#testing-phone {
+  width: 94px;
+  height: 109px;
+}
+
+@media only screen and (max-width: 1023px) {
+  #commercial-items {
+    height: auto;
+    padding-left: 0;
+    background: none;
+  }
+
+  #support img {
+    display: block;
+  }
+}
+
+/* Community. */
+#community {
+  background-color: $secondaryBg;
+}
+
+#community .home-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#community h1 {
+  text-align: left;
+}
+
+#community .tiles {
+  margin-top: 0;
+  justify-content: space-between;
+}
+
+#community .tiles .tile:nth-child(1) {
+  flex-grow: 2;
+  max-width: 610px;
+}
+
+#community .tiles .tile:nth-child(2) {
+  padding-left: 80px;
+  border-left: solid 2px $lineColor;
+}
+
+#community .tiles .tile:nth-child(1) .btn {
+  margin: 20px 10px 20px 0;
+}
+
+@media only screen and (max-width: 1023px) {
+  #community .tiles .tile:nth-child(2) {
+    padding-left: 0;
+    border-left: none;
+  }
 }
 
 /* -------------------------------------------------------------------
  * Tiles (to introduce half a dozen pages).
  * ------------------------------------------------------------------- */
 
-.tiles + ul {
+.doc-tiles + ul {
   display: flex;
   padding-left: 0;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.tiles + ul li {
+.doc-tiles + ul li {
   list-style-type: none;
   margin: 8px;
   padding: 10px 0;
@@ -742,11 +805,11 @@ input#search_input_react:active {
   align-items: center;
 }
 
-.tiles + ul img {
+.doc-tiles + ul img {
   height: 60px;
 }
 
-.tiles + ul a {
+.doc-tiles + ul a {
   color: $textColor;
   font-weight: 500;
   text-decoration: none;

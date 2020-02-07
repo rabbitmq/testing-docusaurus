@@ -62,6 +62,7 @@ const siteConfig = {
     primaryBg: '#fff',
     secondaryBg: '#f9fafb',
     textColor: '#585858',
+    lineColor: '#ededed',
   },
 
   /* Custom fonts for website */

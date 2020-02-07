@@ -4,7 +4,7 @@ title: Welcome to RabbitMQ Docs
 sidebar_label: Welcome to RabbitMQ Docs
 ---
 
-<div class="tiles"></div>
+<div class="doc-tiles"></div>
 
 *   [![](/img/overview/why-rabbitmq.svg)](intro)
     [Why use RabbitMQ?](intro)
