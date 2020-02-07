@@ -5,6 +5,8 @@ author: Jean-Sébastien Pédron
 
 In this post we will cover **<a href="https://next.rabbitmq.com/feature-flags.html">feature flags</a>**, a new subsystem in RabbitMQ 3.8. Feature flags will allow a rolling cluster upgrade to the next minor version, without requiring all nodes to be stopped before upgrading.
 
+<!--truncate-->
+
 ## Minor Version Upgrades Today: RabbitMQ 3.6.x to 3.7.x
 
 It you had to upgrade a cluster from RabbitMQ 3.6.x to 3.7.x, you probably had to use one of the following solutions:

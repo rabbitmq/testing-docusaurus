@@ -34,7 +34,7 @@ class Intro extends React.Component {
 
     var blogSidebarConfig = this.props.config;
     blogSidebarConfig.blogSidebarTitle = {default: 'Updates'};
-    blogSidebarConfig.blogSidebarCount = 3;
+    blogSidebarConfig.blogSidebarCount = 5;
 
     return (
       <div id='intro'>
@@ -75,6 +75,7 @@ class Intro extends React.Component {
           <div id='twitterfeed'>
             <h2>Tweets</h2>
             <a className="twitter-timeline" href="https://twitter.com/RabbitMQ" data-chrome="noheader nofooter noborders transparent noscrollbar" data-tweet-limit='2'></a>
+            <script src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
             <p><a href='https://twitter.com/RabbitMQ'>More tweets<span className='arrow'></span></a></p>
           </div>
         </div>
