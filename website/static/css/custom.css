@@ -46,6 +46,14 @@ a {
   width: 100%;
 }
 
+.arrow {
+  background: url(/img/arrow.svg) no-repeat center center;
+  width: 17px;
+  height: 7px;
+  margin-left: 8px;
+  display: inline-block;
+}
+
 /* -------------------------------------------------------------------
  * Header.
  * ------------------------------------------------------------------- */
@@ -521,6 +529,87 @@ input#search_input_react:active {
 
 #intro h2 {
   margin: 0 0 10px;
+}
+
+#intro p {
+  max-width: 630px;
+  margin: 25px 0;
+}
+
+/* Uberflip embed styles */
+.hubs-embedded {
+  overflow: inherit !important;
+  font-family: $myFont !important;
+  margin-bottom: 0 !important;
+}
+
+.hubs-embedded a {
+  color: #FF6600 !important;
+  text-decoration: underline !important;
+}
+
+.hubs-embedded .tile {
+  width: 201px !important;
+}
+
+.hubs-embedded  .share-single,
+.hubs-embedded  #collection-items .tile.single .img,
+.hubs-embedded .friendly-timestamp .timeago,
+.hubs-embedded  .tile.single .icon {
+  display: none !important;
+}
+
+.hubs-embedded .tile.single .description h3.h3like {
+  font-weight: 400 !important;
+}
+
+.hubs-embedded  div.tile.single>a.view,
+.hubs-embedded li.tile.single>a.view {
+  padding-left: 20px !important;
+  background-image: none !important;
+}
+
+.hubs-embedded #collection-items .tile.single .description .friendly-timestamp {
+  margin: 20px 0 0 20px !important;
+}
+
+.hubs-embedded #collection-items .tile:first-child {
+  margin-left: 0 !important;
+}
+
+.hubs-embedded #collection-items .tile:nth-child(3) {
+  margin-right: 0 !important;
+}
+
+.hubs-embedded  #collection-items {
+  width: 99.8% !important;
+}
+
+.hubs-embedded  .tile.single>a.view {
+  background-color: white;
+  color: #00b5a3;
+  font-weight: 400;
+  z-index: 0;
+}
+
+.hubs-embedded  .tile.single>a.view:after {
+  background: transparent url(/img/arrow.svg) left top no-repeat !important;
+  top: 15px !important;
+  width: 20px;
+  height: 10px;
+}
+
+.hubs-embedded  .tile.single {
+  height: 200px !important;
+}
+
+.hubs-embedded  .tile.single  .description {
+  top: 0;
+}
+
+.hubs-embedded  .tile.single  .description  h4.avatar {
+  height: 100px !important;
+  overflow: hidden;
 }
 
 /* -------------------------------------------------------------------
