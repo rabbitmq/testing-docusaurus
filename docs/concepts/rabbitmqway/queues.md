@@ -37,3 +37,7 @@ We can configure queues to not grow beyond a certain size or length via the use 
 ### Time-to-live (TTL)
 
 Classic and Classic HA queues allow for messages to be discarded once they exceed a given time-limit
+
+### Lazy Mode
+
+Classic and Classic HA queues by default will try and keep messages in memory. This can cause memory issues when queues grow very large. When a queue is configured to be lazy it will remove messages from memory once successfully written to disk and lazily load them back into memory on demand. This lowers the memory footprint dramatically.
