@@ -9,10 +9,7 @@
 const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
-
-const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+const BlogSidebar = require('../../core/BlogSidebar.js');
 
 class HomeHero extends React.Component {
   render() {
@@ -38,6 +35,10 @@ class Intro extends React.Component {
   render() {
     const script1 = {__html: "window._ufHubConfig = window._ufHubConfig || [];window._ufHubConfig.push({'containers':{'app':'#UfEmbeddedHub1501190831892'},'collection':'453624','openLink':function(url){window.open(url);},'lazyloader':{'itemDisplayLimit':3,'maxTilesPerRow':3,'maxItemsTotal':3},'tileSize':'small','enablePageTracking':false,'baseUrl':'https://content.pivotal.io/','filesUrl':'https://content.cdntwrk.com/','generatedAtUTC':'2017-07-27 21:26:47'});"};
     const script2 = {__html: "(function(d,t,u){function load(){var s=d.createElement(t);s.src=u;d.body.appendChild(s);}if(window.addEventListener){window.addEventListener('load',load,false);}else if(window.attachEvent){window.attachEvent('onload',load);}else{window.onload=load;}}(document,'script','https://content.pivotal.io/hubsFront/embed_collection'));"};
+
+    var blogSidebarConfig = this.props.config;
+    blogSidebarConfig.blogSidebarTitle = {default: 'Updates'};
+    blogSidebarConfig.blogSidebarCount = 3;
 
     return (
       <div id='intro'>
@@ -74,8 +75,11 @@ class Intro extends React.Component {
           <div className='column onethird'>
             <div className='container'>
               <div id='releases'>
-                <h2>Updates</h2>
-                <p><a href='/news.html'>More updates<span className='arrow'></span></a></p>
+                <BlogSidebar
+                  language="en"
+                  config={blogSidebarConfig}
+                />
+                <p><a href='/blog/'>More updates<span className='arrow'></span></a></p>
               </div>
               <div id='twitterfeed'>
                 <h2>Tweets</h2>
@@ -90,191 +94,205 @@ class Intro extends React.Component {
   }
 }
 
-class HomeSplash extends React.Component {
+class Features extends React.Component {
   render() {
-    const {siteConfig, language = ''} = this.props;
-    const {baseUrl, docsUrl} = siteConfig;
-    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
-    const langPart = `${language ? `${language}/` : ''}`;
-    const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
-
-    const SplashContainer = props => (
-      <div className="homeContainer">
-        <div className="homeSplashFade">
-          <div className="wrapper homeWrapper">{props.children}</div>
-        </div>
-      </div>
-    );
-
-    const Logo = props => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
-      </div>
-    );
-
-    const ProjectTitle = props => (
-      <h2 className="projectTitle">
-        {props.title}
-        <small>{props.tagline}</small>
-      </h2>
-    );
-
-    const PromoSection = props => (
-      <div className="section promoSection">
-        <div className="promoRow">
-          <div className="pluginRowBlock">{props.children}</div>
-        </div>
-      </div>
-    );
-
-    const Button = props => (
-      <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={props.href} target={props.target}>
-          {props.children}
-        </a>
-      </div>
-    );
-
     return (
-      <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
-        <div className="inner">
-          <ProjectTitle tagline={siteConfig.tagline} title={siteConfig.title} />
-          <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
-          </PromoSection>
+      <div id='features'>
+        <div className='container'>
+          <h1 className='center'>RabbitMQ Features</h1>
+          <div className='features'>
+            <div className='feature column onethird'>
+              <div className='inner'>
+                <img src="/img/features/messaging.svg" height="62" width="71" alt="Asynchronous Messaging" title="Asynchronous Messaging" />
+                <h2>Asynchronous Messaging</h2>
+                <p>
+                  Supports <a href='/protocols.html'>multiple messaging protocols</a>, <a href='/tutorials/tutorial-two-python.html'>message queuing</a>, <a href='/reliability.html'>delivery acknowledgement</a>, <a href='/tutorials/tutorial-four-python.html'>flexible routing to queues</a>, <a href='/tutorials/amqp-concepts.html'>multiple exchange type</a>.
+                </p>
+              </div>
+            </div>
+            <div className='feature column onethird'>
+              <div className='inner'>
+                <img src="/img/features/monitor.svg" height="62" width="71" alt="Developer Experience" title="Developer Experience" />
+                <h2>Developer Experience</h2>
+                <p>
+                  Deploy with <a href='/download.html'>BOSH, Chef, Docker and Puppet</a>. Develop cross-language messaging with favorite programming languages such as: Java, .NET, PHP, Python, JavaScript, Ruby, Go, <a href='/devtools.html'>and many others</a>.
+                </p>
+              </div>
+            </div>
+            <div className='feature column onethird'>
+              <div className='inner'>
+                <img src="/img/features/network.svg" height="62" width="71" alt="Distributed Deployment" title="Distributed Deployment" />
+                <h2>Distributed Deployment</h2>
+                <p>
+                  Deploy as <a href='/clustering.html'>clusters</a> for high availability and throughput; <a href='/federation.html'>federate</a> across multiple availability zones and regions.
+                </p>
+              </div>
+            </div>
+            <div className='feature column onethird'>
+              <div className='inner'>
+                <img src="/img/features/clouds.svg" height="62" width="71" alt="Enterprise &amp; Cloud Ready" title="Enterprise &amp; Cloud Ready" />
+                <h2>Enterprise &amp; Cloud Ready</h2>
+                <p>
+                  Pluggable <a href='/authentication.html'>authentication</a>, <a href='/access-control.html'>authorisation</a>, supports <a href='/ssl.html'>TLS</a> and <a href='/ldap.html'>LDAP</a>. Lightweight and easy to deploy in public and private clouds.
+                </p>
+              </div>
+            </div>
+            <div className='feature column onethird'>
+              <div className='inner'>
+                <img src="/img/features/tools.svg" height="62" width="71" alt="Tools &amp; Plugins" title="Tools &amp; Plugins" />
+                <h2>Tools &amp; Plugins</h2>
+                <p>
+                  Diverse array of <a href='/devtools.html'>tools and plugins</a> supporting continuous integration, operational metrics, and integration to other enterprise systems. Flexible <a href='/plugins.html'>plug-in approach</a> for extending RabbitMQ functionality.
+                </p>
+              </div>
+            </div>
+            <div className='feature column onethird'>
+              <div className='inner'>
+                <img src="/img/features/gauge.svg" height="62" width="71" alt="Management &amp; Monitoring" title="Management &amp; Monitoring" />
+                <h2>Management &amp; Monitoring</h2>
+                <p>
+                  HTTP-API, command line tool, and UI for <a href='/management.html'>managing and monitoring</a> RabbitMQ.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </SplashContainer>
+      </div>
+    );
+  }
+}
+
+class GetStarted extends React.Component {
+  render() {
+    return (
+      <div id='getstarted' class='center'>
+        <div className='container'>
+          <h1>Get Started</h1>
+          <div className='columns'>
+            <div className='column fifty'>
+              <div className='inner'>
+                <div className='container'>
+                  <a className='btn' href='/download.html'>Download + Installation</a>
+                  <p>Servers and clients for popular operating systems and languages</p>
+                </div>
+              </div>
+            </div>
+            <div className='column fifty'>
+              <div className='inner'>
+                <div className='container'>
+                  <a className='btn orangebtn' href='/getstarted.html'>RabbitMQ Tutorials</a>
+                  <p>Hands-on examples to get you started with RabbitMQ</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Support extends React.Component {
+  render() {
+    return (
+      <div id='support'>
+        <div className='container'>
+          <h1 className='center'>RabbitMQ Commercial Services</h1>
+          <div className='columns'>
+            <div className='column onequarter'>
+              <div id='commercialservicesillustration'></div>
+            </div>
+            <div className='column threequarters'>
+              <img src="img/commercial-distribution-phone.svg" height="111" width="88" />
+              <h2>Commercial Distribution</h2>
+              <p>
+                Pivotal Software offers a <a href="https://pivotal.io/rabbitmq">range of commercial offerings for RabbitMQ</a>.
+                This includes a distribution called <a href="https://network.pivotal.io/products/pivotal-rabbitmq">Pivotal RabbitMQ</a>,
+                a version that deploys in <a href="https://pivotal.io/platform/services-marketplace/messaging-and-integration/rabbitmq">Pivotal Platform</a>,
+                and a forthcoming <a href="https://content.pivotal.io/blog/introducing-rabbitmq-for-kubernetes">version for Kubernetes</a>.
+                These distributions include all of the features of the open source version, with some additional management features. Support agreements are part of the commercial licensing.
+              </p>
+              <img src="img/support-and-hosting-phone.svg" height="94" width="109" />
+              <h2>Support + Hosting</h2>
+              <p>
+                Pivotal Software provides <a href="https://pivotal.io/rabbitmq">support for open source RabbitMQ</a>,
+                available for a subscription fee. The following companies provide technical support and/or cloud hosting of open source RabbitMQ:
+                <a href="https://www.cloudamqp.com/">CloudAMQP</a>,
+                <a href="https://www.erlang-solutions.com/products/rabbitmq.html">Erlang Solutions</a>,
+                <a href="https://acemq.com/rabbitmq/">AceMQ</a>,
+                <a href="http://www.visualintegrator.com/rmq/">Visual Integrator, Inc</a> and
+                <a href="https://console.cloud.google.com/launcher/details/click-to-deploy-images/rabbitmq">Google Cloud Platform</a>.
+                RabbitMQ can also be deployed in AWS and Microsoft Azure.
+              </p>
+              <img src="img/testing-phone.svg" height="109" width="94" />
+              <h2>Training</h2>
+              <p>The following companies provide free, virtual, or instructor-led courses for RabbitMQ:
+                <a href="https://academy.pivotal.io/store-catalog" target="_blank">Pivotal Software</a>,
+                <a href="https://www.erlang-solutions.com/products/rabbitmq.html">Erlang Solutions</a>,
+                <a href="http://www.visualintegrator.com/rmq/" target="_blank">Visual Integrator, Inc</a> and
+                <a href="https://www.learnquest.com/course-detail-v3.aspx?cnum=rabbitmq-e1xc" target="_blank">LearnQuest</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Community extends React.Component {
+  render() {
+    return (
+      <div id='community'>
+        <div className='container'>
+          <div className='column twothirds'>
+            <div className='inner'>
+              <h1>Community</h1>
+              <br/>
+              <a className='btn orangebtn' href='https://groups.google.com/forum/#!forum/rabbitmq-users' target="_blank">Mailing List</a>
+              <a className='btn' href='https://rabbitmq-slack.herokuapp.com/' target="_blank">Slack Channel</a>
+              <br/><br/>
+              <p>Meet your fellow Rabbits to share stories, advice, and get help.</p>
+              <h2>Issues &amp; Bug Reports</h2>
+              <p>Start by searching the <a href="https://groups.google.com/forum/#!forum/rabbitmq-users" target="_blank">Mailing List</a> archive and known issues on <a href="https://github.com/rabbitmq?q=rabbitmq" target="_blank">Github</a>. It’s very likely fellow users have raised the same issue. </p>
+              <h2>Contributions</h2>
+              <p>RabbitMQ welcomes contributions from the community. Please see our <a href='/github.html'>Contributors Page</a> to learn more.</p>
+            </div>
+          </div>
+          <div className='column onethird'>
+            <div className='inner'>
+              <div className='container'>
+                <h1>Contact Us</h1>
+                <h2>Commercial inquiries</h2>
+                <p><a href='mailto:rabbitmq-sales@pivotal.io'>Pivotal Sales</a> | <a href='https://support.pivotal.io' target="_blank">Pivotal Support</a></p>
+                <h2>Other inquiries</h2>
+                <p><a href="/contact.html">Contact us</a></p>
+                <h2>Report a security vulnerability</h2>
+                <p><a href="mailto:security@rabbitmq.com">security@rabbitmq.com</a></p>
+                <h2>Social media</h2>
+                <p><a href='https://twitter.com/RabbitMQ' target="_blank">Twitter</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
 class Index extends React.Component {
   render() {
-    const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
-
-    const Block = props => (
-      <Container
-        padding={['bottom', 'top']}
-        id={props.id}
-        background={props.background}>
-        <GridBlock
-          align="center"
-          contents={props.children}
-          layout={props.layout}
-        />
-      </Container>
-    );
-
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id="try">
-        {[
-          {
-            content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
-          },
-        ]}
-      </Block>
-    );
-
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
-          },
-        ]}
-      </Block>
-    );
-
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
-
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
+    const {config: config, language = ''} = this.props;
 
     return (
       <div>
-        <HomeHero siteConfig={siteConfig} language={language} />
+        <HomeHero config={config} language={language} />
         <div className="mainContainer">
-          <Intro siteConfig={siteConfig} language={language} />
+          <Intro config={config} language={language} />
+          <Features config={config} language={language} />
+          <GetStarted config={config} language={language} />
+          <Support config={config} language={language} />
+          <Community config={config} language={language} />
         </div>
       </div>
     );

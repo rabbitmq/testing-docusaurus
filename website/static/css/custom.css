@@ -46,12 +46,40 @@ a {
   width: 100%;
 }
 
+.fifty {
+  max-width: 49%;
+  width: 100%;
+}
+
 .arrow {
   background: url(/img/arrow.svg) no-repeat center center;
   width: 17px;
   height: 7px;
   margin-left: 8px;
   display: inline-block;
+}
+
+.btn {
+  border-radius: 3px;
+  background: #866e8b;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 13px 15px;
+}
+
+.btn:hover {
+  color: white;
+  background: #58435D;
+}
+
+.orangebtn {
+  background: #FF6600;
+}
+
+.orangebtn:hover {
+  color: white;
+  background: #D15503;
 }
 
 /* -------------------------------------------------------------------
@@ -506,6 +534,8 @@ input#search_input_react:active {
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
+  padding: 40px 0 30px;
+  border-bottom: solid 2px #ededed;
 }
 
 #intro .twothirds {
@@ -610,6 +640,81 @@ input#search_input_react:active {
 .hubs-embedded  .tile.single  .description  h4.avatar {
   height: 100px !important;
   overflow: hidden;
+}
+
+/* Updates. */
+#releases .docsNavContainer {
+  position: static;
+  height: auto;
+  margin-top: 0;
+}
+
+#releases .toc section .navGroups {
+  padding-top: 0;
+}
+
+#releases .toc .toggleNav .navGroup {
+  margin-bottom: 0;
+}
+
+#releases .navGroupCategoryTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+#releases ul {
+  margin-bottom: 0;
+}
+
+/* Features. */
+#features {
+  max-width: 1180px;
+  margin: 80px auto;
+}
+
+#features .features {
+  margin: 60px 0 0;
+}
+
+#features .feature {
+  margin: 0 0 60px;
+}
+
+#features .feature .inner {
+  max-width: 290px;
+  padding-right: 40px;
+}
+
+#features .feature:nth-child(3n) .inner {
+  padding-right: 0;
+}
+
+/* Get started. */
+#getstarted {
+  background-color: $secondaryBg;
+}
+
+#getstarted > .container {
+  max-width: 1180px;
+  padding: 60px 0 30px;
+}
+
+#getstarted .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#getstarted p {
+  margin-top: 35px;
+}
+
+#getstarted .fifty .inner {
+  padding: 50px 0;
+}
+
+#getstarted .fifty .container {
+  max-width: 320px;
 }
 
 /* -------------------------------------------------------------------
