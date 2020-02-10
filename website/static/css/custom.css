@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
- 
+
 /* your custom css */
 body {
   font-family: $myFont;
@@ -451,7 +451,7 @@ input#search_input_react:active {
 #hero #hero-laika-case-study h2 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #585859; 
+  color: #585859;
   font-weight: 400;
   line-height: 1.2em;
 }
@@ -577,6 +577,22 @@ input#search_input_react:active {
 }
 
 /* Uberflip embed styles */
+#UfEmbeddedHub1501190831892 {
+  min-height: 320px;
+}
+
+@media only screen and (max-width: 749px) {
+  #UfEmbeddedHub1501190831892 {
+    min-height: 640px;
+  }
+}
+
+@media only screen and (max-width: 509px) {
+  #UfEmbeddedHub1501190831892 {
+    min-height: 960px;
+  }
+}
+
 .hubs-embedded {
   overflow: inherit !important;
   font-family: $myFont !important;
@@ -604,19 +620,24 @@ input#search_input_react:active {
 
 .hubs-embedded .tile.single .description h3.h3like {
   font-weight: 400 !important;
+  padding-top: 12px;
 }
 
-.hubs-embedded div.tile.single>a.view,
-.hubs-embedded li.tile.single>a.view {
+.hubs-embedded div.tile.single > a.view,
+.hubs-embedded li.tile.single > a.view {
   padding-left: 20px !important;
   background-image: none !important;
 }
 
-.hubs-embedded .tile.single>a.view:after {
+.hubs-embedded .tile.single > a.view:after {
   background: transparent url(/img/arrow.svg) left top no-repeat !important;
   top: 15px !important;
   width: 20px;
   height: 10px;
+}
+
+.hubs-embedded .friendly-timestamp {
+  display: none;
 }
 
 /* Updates. */

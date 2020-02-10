@@ -8,8 +8,39 @@
 
 const React = require('react');
 
-const CompLibrary = require('../../core/CompLibrary.js');
 const BlogSidebar = require('../../core/BlogSidebar.js');
+//const CompLibrary = require('../../core/CompLibrary.js');
+
+const renderMarkdown = require('../../core/renderMarkdown.js');
+
+class Md extends React.Component {
+  content() {
+    return React.Children.map(this.props.children, child => {
+      if (typeof child === 'string') {
+        //return 'string:' + child;
+        return renderMarkdown(child);
+      }
+
+      return child;
+    });
+  }
+
+  render() {
+    const Container = this.props.container;
+    if (this.props.className) {
+      return <Container
+               className={this.props.className}
+               dangerouslySetInnerHTML={{__html: this.content()}} />;
+    } else {
+      return <Container
+               dangerouslySetInnerHTML={{__html: this.content()}} />;
+    }
+  }
+}
+
+Md.defaultProps = {
+  container: 'div',
+};
 
 class HomeHero extends React.Component {
   render() {
@@ -91,48 +122,76 @@ class Features extends React.Component {
         <div className='home-section'>
           <h1>RabbitMQ Features</h1>
           <div className='tiles'>
-            <div className='tile'>
-              <img src="/img/features/messaging.svg" alt="Asynchronous Messaging" title="Asynchronous Messaging" />
-              <h2>Asynchronous Messaging</h2>
-              <p>
-                Supports <a href='/protocols.html'>multiple messaging protocols</a>, <a href='/tutorials/tutorial-two-python.html'>message queuing</a>, <a href='/reliability.html'>delivery acknowledgement</a>, <a href='/tutorials/tutorial-four-python.html'>flexible routing to queues</a>, <a href='/tutorials/amqp-concepts.html'>multiple exchange type</a>.
-              </p>
-            </div>
-            <div className='tile'>
-              <img src="/img/features/monitor.svg" alt="Developer Experience" title="Developer Experience" />
-              <h2>Developer Experience</h2>
-              <p>
-                Deploy with <a href='/download.html'>BOSH, Chef, Docker and Puppet</a>. Develop cross-language messaging with favorite programming languages such as: Java, .NET, PHP, Python, JavaScript, Ruby, Go, <a href='/devtools.html'>and many others</a>.
-              </p>
-            </div>
-            <div className='tile'>
-              <img src="/img/features/network.svg" alt="Distributed Deployment" title="Distributed Deployment" />
-              <h2>Distributed Deployment</h2>
-              <p>
-                Deploy as <a href='/clustering.html'>clusters</a> for high availability and throughput; <a href='/federation.html'>federate</a> across multiple availability zones and regions.
-              </p>
-            </div>
-            <div className='tile'>
-              <img src="/img/features/clouds.svg" alt="Enterprise &amp; Cloud Ready" title="Enterprise &amp; Cloud Ready" />
-              <h2>Enterprise &amp; Cloud Ready</h2>
-              <p>
-                Pluggable <a href='/authentication.html'>authentication</a>, <a href='/access-control.html'>authorisation</a>, supports <a href='/ssl.html'>TLS</a> and <a href='/ldap.html'>LDAP</a>. Lightweight and easy to deploy in public and private clouds.
-              </p>
-            </div>
-            <div className='tile'>
-              <img src="/img/features/tools.svg" alt="Tools &amp; Plugins" title="Tools &amp; Plugins" />
-              <h2>Tools &amp; Plugins</h2>
-              <p>
-                Diverse array of <a href='/devtools.html'>tools and plugins</a> supporting continuous integration, operational metrics, and integration to other enterprise systems. Flexible <a href='/plugins.html'>plug-in approach</a> for extending RabbitMQ functionality.
-              </p>
-            </div>
-            <div className='tile'>
-              <img src="/img/features/gauge.svg" alt="Management &amp; Monitoring" title="Management &amp; Monitoring" />
-              <h2>Management &amp; Monitoring</h2>
-              <p>
-                HTTP-API, command line tool, and UI for <a href='/management.html'>managing and monitoring</a> RabbitMQ.
-              </p>
-            </div>
+            <Md className='tile'>
+{`
+![Asynchronous Messaging](/img/features/messaging.svg)
+
+## Asynchronous Messaging
+
+Supports [multiple messaging protocols](/protocols.html),
+[message queuing](/tutorials/tutorial-two-python.html),
+[delivery acknowledgement](/reliability.html),
+[flexible routing to queues](/tutorials/tutorial-four-python.html),
+[multiple exchange type](/tutorials/amqp-concepts.html).
+`}
+            </Md>
+            <Md className='tile'>
+{`
+![Developer Experience](/img/features/monitor.svg)
+
+## Developer Experience
+
+Deploy with [BOSH, Chef, Docker and Puppet](/download.html). Develop
+cross-language messaging with favorite programming languages such
+as: Java, .NET, PHP, Python, JavaScript, Ruby, Go, [and many
+others](/devtools.html).
+`}
+            </Md>
+            <Md className='tile'>
+{`
+![Distributed Deployment](/img/features/network.svg)
+
+## Distributed Deployment
+
+Deploy as [clusters](/clustering.html) for high availability and
+throughput; [federate](/federation.html) across multiple availability
+zones and regions.
+`}
+            </Md>
+            <Md className='tile'>
+{`
+![Enterprise & Cloud Ready](/img/features/clouds.svg)
+
+## Enterprise &amp; Cloud Ready
+
+Pluggable [authentication](/authentication.html),
+[authorisation](/access-control.html) supports [TLS](/ssl.html) and
+[LDAP](/ldap.html). Lightweight and easy to deploy in public and private
+clouds.
+`}
+            </Md>
+            <Md className='tile'>
+{`
+![Tools & Plugins](/img/features/tools.svg)
+
+## Tools & Plugins
+
+Diverse array of [tools and plugins](/devtools.html) supporting
+continuous integration, operational metrics, and integration to other
+enterprise systems. Flexible [plug-in approach](/plugins.html) for
+extending RabbitMQ functionality.
+`}
+            </Md>
+            <Md className='tile'>
+{`
+![Management & Monitoring](/img/features/gauge.svg)
+
+## Management & Monitoring
+
+HTTP-API, command line tool, and UI for [managing and
+monitoring](/management.html) RabbitMQ.
+`}
+            </Md>
           </div>
         </div>
       </div>
@@ -195,27 +254,47 @@ class Community extends React.Component {
       <div id='community' className='home-section-container'>
         <div className='home-section'>
           <div className='tiles'>
-            <div className='tile'>
-              <h1>Community</h1>
-              <a className='btn btn-primary' href='https://groups.google.com/forum/#!forum/rabbitmq-users' target="_blank">Mailing List</a>
-              <a className='btn btn-secondary' href='https://rabbitmq-slack.herokuapp.com/' target="_blank">Slack Channel</a>
-              <p>Meet your fellow Rabbits to share stories, advice, and get help.</p>
-              <h2>Issues &amp; Bug Reports</h2>
-              <p>Start by searching the <a href="https://groups.google.com/forum/#!forum/rabbitmq-users" target="_blank">Mailing List</a> archive and known issues on <a href="https://github.com/rabbitmq?q=rabbitmq" target="_blank">Github</a>. It’s very likely fellow users have raised the same issue. </p>
-              <h2>Contributions</h2>
-              <p>RabbitMQ welcomes contributions from the community. Please see our <a href='/github.html'>Contributors Page</a> to learn more.</p>
-            </div>
-            <div className='tile'>
-              <h1>Contact Us</h1>
-              <h2>Commercial inquiries</h2>
-              <p><a href='mailto:rabbitmq-sales@pivotal.io'>Pivotal Sales</a> | <a href='https://support.pivotal.io' target="_blank">Pivotal Support</a></p>
-              <h2>Other inquiries</h2>
-              <p><a href="/contact.html">Contact us</a></p>
-              <h2>Report a security vulnerability</h2>
-              <p><a href="mailto:security@rabbitmq.com">security@rabbitmq.com</a></p>
-              <h2>Social media</h2>
-              <p><a href='https://twitter.com/RabbitMQ' target="_blank">Twitter</a></p>
-            </div>
+            <Md className='tile'>
+{`
+# Community
+
+<a class="btn btn-primary" href="https://groups.google.com/forum/#!forum/rabbitmq-users">Mailing List</a>
+<a class="btn btn-secondary" href="https://rabbitmq-slack.herokuapp.com/">Slack Channel</a>
+
+Meet your fellow Rabbits to share stories, advice, and get help.
+
+## Issues & Bug Reports
+
+Start by searching the [Mailing
+List](https://groups.google.com/forum/#!forum/rabbitmq-users) archive
+and known issues on [Github](https://github.com/rabbitmq?q=rabbitmq).
+It’s very likely fellow users have raised the same issue.
+
+## Contributions
+
+RabbitMQ welcomes contributions from the community. Please see our
+[Contributors Page](/github.html) to learn more.
+`}
+            </Md>
+            <Md className='tile'>
+{`
+# Contact Us
+
+## Commercial inquiries
+[Pivotal Sales](mailto:rabbitmq-sales@pivotal.io) |
+[Pivotal Support](https://support.pivotal.io)
+
+## Other inquiries
+[Contact us](/contact.html)
+
+## Report a security vulnerability
+[security@rabbitmq.com](mailto:security@rabbitmq.com)
+
+## Social media
+[YouTube](https://www.youtube.com/channel/UCSg9GRMGAo7euj3baJi4dOg) |
+[Twitter](https://twitter.com/RabbitMQ)
+`}
+            </Md>
           </div>
         </div>
       </div>
