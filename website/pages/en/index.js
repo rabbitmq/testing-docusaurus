@@ -27,7 +27,16 @@ class Md extends React.Component {
 
   render() {
     const Container = this.props.container;
-    if (this.props.className) {
+    if (this.props.id && this.props.className) {
+      return <Container
+               id={this.props.id}
+               className={this.props.className}
+               dangerouslySetInnerHTML={{__html: this.content()}} />;
+    } else if (this.props.id) {
+      return <Container
+               id={this.props.id}
+               dangerouslySetInnerHTML={{__html: this.content()}} />;
+    } else if (this.props.className) {
       return <Container
                className={this.props.className}
                dangerouslySetInnerHTML={{__html: this.content()}} />;
@@ -60,41 +69,39 @@ class HomeHero extends React.Component {
 
 class Intro extends React.Component {
   render() {
-    const script1 = {__html: "window._ufHubConfig = window._ufHubConfig || [];window._ufHubConfig.push({'containers':{'app':'#UfEmbeddedHub1501190831892'},'collection':'453624','openLink':function(url){window.open(url);},'lazyloader':{'itemDisplayLimit':3,'maxTilesPerRow':3,'maxItemsTotal':3},'tileSize':'small','enablePageTracking':false,'baseUrl':'https://content.pivotal.io/','filesUrl':'https://content.cdntwrk.com/','generatedAtUTC':'2017-07-27 21:26:47'});"};
-    const script2 = {__html: "(function(d,t,u){function load(){var s=d.createElement(t);s.src=u;d.body.appendChild(s);}if(window.addEventListener){window.addEventListener('load',load,false);}else if(window.attachEvent){window.attachEvent('onload',load);}else{window.onload=load;}}(document,'script','https://content.pivotal.io/hubsFront/embed_collection'));"};
-
     var blogSidebarConfig = this.props.config;
     blogSidebarConfig.blogSidebarTitle = {default: 'Updates'};
     blogSidebarConfig.blogSidebarCount = 5;
 
     return (
       <div id='intro'>
-        <div id='description'>
-          <h1>RabbitMQ is the most widely deployed open source message broker.</h1>
-          <p>
-            With tens of thousands of users, RabbitMQ is one of the most popular open source message brokers. From <a href="https://www.youtube.com/watch?v=1qcTu2QUtrU">T-Mobile</a>
-            to <a href="https://medium.com/@runtastic/messagebus-handling-dead-letters-in-rabbitmq-using-a-dead-letter-exchange-f070699b952b">Runtastic</a>, RabbitMQ is used worldwide at small startups and large enterprises.
-          </p>
-          <p>
-            RabbitMQ is lightweight and easy to deploy on premises
-            and in the cloud. It supports multiple messaging
-            protocols. RabbitMQ can be deployed in distributed and
-            federated configurations to meet high-scale,
-            high-availability requirements.
-          </p>
-          <p>
-            RabbitMQ runs on many operating systems and cloud
-            environments, and provides a <a href="/devtools.html">wide range of developer
-            tools for most popular languages</a>.
-          </p>
-          <p>
-            See how other people are using RabbitMQ:
-          </p>
-          <div id="UfEmbeddedHub1501190831892"></div>
-          <script dangerouslySetInnerHTML={script1}></script>
-          <script dangerouslySetInnerHTML={script2}></script>
-          <p id='morelinkafterufembed'><a href='https://content.pivotal.io/rabbitmq'>More <span className="arrow"></span></a></p>
-        </div>
+        <Md id='description'>
+{`
+# RabbitMQ is the most widely deployed open source message broker.
+
+With tens of thousands of users, RabbitMQ is one of
+the most popular open source message brokers. From
+[T-Mobile](https://www.youtube.com/watch?v=1qcTu2QUtrU) to
+[Runtastic](https://medium.com/@runtastic/messagebus-handling-dead-letters-in-rabbitmq-using-a-dead-letter-exchange-f070699b952b),
+RabbitMQ is used worldwide at small startups and large enterprises.
+
+RabbitMQ is lightweight and easy to deploy on premises and in the
+cloud. It supports multiple messaging protocols. RabbitMQ can be
+deployed in distributed and federated configurations to meet high-scale,
+high-availability requirements.
+
+RabbitMQ runs on many operating systems and cloud environments,
+and provides a [wide range of developer tools for most popular
+languages](/devtools.html).
+
+See how other people are using RabbitMQ:
+
+<div id="UfEmbeddedHub1501190831892"></div>
+<script>window._ufHubConfig = window._ufHubConfig || [];window._ufHubConfig.push({'containers':{'app':'#UfEmbeddedHub1501190831892'},'collection':'453624','openLink':function(url){window.open(url);},'lazyloader':{'itemDisplayLimit':3,'maxTilesPerRow':3,'maxItemsTotal':3},'tileSize':'small','enablePageTracking':false,'baseUrl':'https://content.pivotal.io/','filesUrl':'https://content.cdntwrk.com/','generatedAtUTC':'2017-07-27 21:26:47'});</script>
+<script>(function(d,t,u){function load(){var s=d.createElement(t);s.src=u;d.body.appendChild(s);}if(window.addEventListener){window.addEventListener('load',load,false);}else if(window.attachEvent){window.attachEvent('onload',load);}else{window.onload=load;}}(document,'script','https://content.pivotal.io/hubsFront/embed_collection'));</script>
+<p id='morelinkafterufembed'><a href='https://content.pivotal.io/rabbitmq'>More <span className="arrow"></span></a></p>
+`}
+        </Md>
         <div id='news'>
           <div id='updates'>
             <BlogSidebar
@@ -227,20 +234,49 @@ class Support extends React.Component {
       <div id='support' className='home-section-container'>
         <div className='home-section'>
           <h1>RabbitMQ Commercial Services</h1>
-          <div id='commercial-items'>
-            <img src="/img/commercial/commercial-distribution-phone.svg" id='commercial-distribution-phone' />
-            <h2>Commercial Distribution</h2>
-            <p>
-              Pivotal Software offers a <a href="https://pivotal.io/rabbitmq">range of commercial offerings for RabbitMQ</a>. This includes a distribution called <a href="https://network.pivotal.io/products/pivotal-rabbitmq">Pivotal RabbitMQ</a>, a version that deploys in <a href="https://pivotal.io/platform/services-marketplace/messaging-and-integration/rabbitmq">Pivotal Platform</a>, and a forthcoming <a href="https://content.pivotal.io/blog/introducing-rabbitmq-for-kubernetes">version for Kubernetes</a>. These distributions include all of the features of the open source version, with some additional management features. Support agreements are part of the commercial licensing.</p>
-            <img src="/img/commercial/support-and-hosting-phone.svg" id='support-and-hosting-phone' />
-            <h2>Support + Hosting</h2>
-            <p>
-              Pivotal Software provides <a href="https://pivotal.io/rabbitmq">support for open source RabbitMQ</a>, available for a subscription fee. The following companies provide technical support and/or cloud hosting of open source RabbitMQ: <a href="https://www.cloudamqp.com/">CloudAMQP</a>, <a href="https://www.erlang-solutions.com/products/rabbitmq.html">Erlang Solutions</a>, <a href="https://acemq.com/rabbitmq/">AceMQ</a>, <a href="http://www.visualintegrator.com/rmq/">Visual Integrator, Inc</a> and <a href="https://console.cloud.google.com/launcher/details/click-to-deploy-images/rabbitmq">Google Cloud Platform</a>. RabbitMQ can also be deployed in AWS and Microsoft Azure.
-            </p>
-            <img src="/img/commercial/testing-phone.svg" id='testing-phone' />
-            <h2>Training</h2>
-            <p>The following companies provide free, virtual, or instructor-led courses for RabbitMQ: <a href="https://academy.pivotal.io/store-catalog" target="_blank">Pivotal Software</a>, <a href="https://www.erlang-solutions.com/products/rabbitmq.html">Erlang Solutions</a>, <a href="http://www.visualintegrator.com/rmq/" target="_blank">Visual Integrator, Inc</a> and <a href="https://www.learnquest.com/course-detail-v3.aspx?cnum=rabbitmq-e1xc" target="_blank">LearnQuest</a>.
-            </p>
+          <Md id='commercial-items'>
+{`
+<img src="/img/commercial/commercial-distribution-phone.svg" id='commercial-distribution-phone' />
+
+## Commercial Distribution
+
+Pivotal Software offers a [range of commercial offerings for
+RabbitMQ](https://pivotal.io/rabbitmq).
+This includes a distribution called [Pivotal RabbitMQ](https://network.pivotal.io/products/pivotal-rabbitmq),
+a version that deploys in [Pivotal Platform](https://pivotal.io/platform/services-marketplace/messaging-and-integration/rabbitmq),
+and a forthcoming [version for Kubernetes](https://content.pivotal.io/blog/introducing-rabbitmq-for-kubernetes).
+These distributions include all of the features of the open source
+version, with some additional management features. Support agreements
+are part of the commercial licensing.
+
+<img src="/img/commercial/support-and-hosting-phone.svg" id='support-and-hosting-phone' />
+
+## Support + Hosting
+
+Pivotal Software provides [support for open source
+RabbitMQ](https://pivotal.io/rabbitmq), available for a subscription
+fee. The following companies provide technical support and/or cloud
+hosting of open source RabbitMQ:
+[CloudAMQP](https://www.cloudamqp.com/),
+[Erlang Solutions](https://www.erlang-solutions.com/products/rabbitmq.html),
+[AceMQ](https://acemq.com/rabbitmq/),
+[Visual Integrator, Inc](http://www.visualintegrator.com/rmq/) and
+[Google Cloud Platform](https://console.cloud.google.com/launcher/details/click-to-deploy-images/rabbitmq).
+RabbitMQ can also be deployed in AWS and Microsoft Azure.
+
+<img src="/img/commercial/testing-phone.svg" id='testing-phone' />
+
+## Training
+
+The following companies provide free, virtual, or instructor-led courses
+for RabbitMQ:
+[Pivotal Software](https://academy.pivotal.io/store-catalog),
+[Erlang Solutions](https://www.erlang-solutions.com/products/rabbitmq.html),
+[Visual Integrator, Inc](http://www.visualintegrator.com/rmq/) and
+[LearnQuest](https://www.learnquest.com/course-detail-v3.aspx?cnum=rabbitmq-e1xc).
+`}
+          </Md>
+          <div id=''>
           </div>
         </div>
       </div>
