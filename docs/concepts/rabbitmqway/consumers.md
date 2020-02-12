@@ -28,13 +28,13 @@ We can scale out consumption of a queue if a single consumer cannot handle the l
 
 We call multiple consumers on a single queue **competing consumers** because each consumer competes to consume the same set of messages. With three consumers subscribed to a single queue, each should get delivered about 1/3 of the messages.
 
-![Competing consumers](/img/docs/queues-competing-consumers.png)
+![Competing consumers](/img/docs/concepts/queues-competing-consumers.png)
 
 ## Non-competing Consumers
 
 When you want three consumers to each process every single message of an exchange, then you need three queues. You tend to need this when you have multiple different services all needing to consume the same messages.
 
-![Non-competing consumers](/img/docs/queues-non-competing-consumers.png)
+![Non-competing consumers](/img/docs/concepts/queues-non-competing-consumers.png)
 
 ## Scaling Consumers Independently
 
@@ -42,4 +42,4 @@ One of RabbitMQ's super powers is the way that it decouples both publishers from
 
 In other messaging systems that are based on topics, you must scale out the topic itself according to the needs of the slowest consumer. With RabbitMQ each subscribing service gets its own queue and can add as many consumers as it desires, independently of other subscribed services.
 
-![Independent consumer scaling](/img/docs/queues-any-num-of-consumers.png)
+![Independent consumer scaling](/img/docs/concepts/queues-any-num-of-consumers.png)

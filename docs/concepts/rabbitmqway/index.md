@@ -14,13 +14,13 @@ The simplest thing to remember is that:
 
 ## Logical Routing Architecture
 
-![Logical routing architectyre](/img/docs/logical-routing.png)
+![Logical routing architectyre](/img/docs/concepts/logical-routing.png)
 
 ## Physical Routing Architecture
 
 In reality, exchanges are not things but simply meta-data that determine message routing. The real flow is publisher channel to queue to consumer channel.
 
-![Physical routing architectyre](/img/docs/physical-routing.png)
+![Physical routing architectyre](/img/docs/concepts/physical-routing.png)
 
 Understanding the physical message flow can help you as you learn more about RabbitMQ clustering and performance.
 

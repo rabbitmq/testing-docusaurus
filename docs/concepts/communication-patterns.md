@@ -17,7 +17,7 @@ There are many communications styles to choose from and RabbitMQ supports them a
 
 ## Synchronous vs Asynchronous Communication
 
-![Synchronous messaging comic strip](/img/docs/strip-sync-async.png)
+![Synchronous messaging comic strip](/img/docs/concepts/strip-sync-async.png)
 
 ### Synchronous
 
@@ -87,7 +87,7 @@ RPC requires Service A to know the address of Service B so it can make a call to
 
 RPC calls can combine into a wide and/or deep call graph which can lead to some downsides.
 
-![RPC call graph](/img/docs/call-graph.png)
+![RPC call graph](/img/docs/concepts/call-graph.png)
 
 The major downside of RPC is coupling which affects:
 
@@ -144,7 +144,7 @@ An operation that is now comprised of multiple independent asynchronous operatio
 
 In all likelihood we shouldn't try to force the usage of only synchronous RPC or asynchronous message passing in our architecture but use a blend of both. 
 
-![A mix of both](/img/docs/mixing-sync-and-async.png)
+![A mix of both](/img/docs/concepts/mixing-sync-and-async.png)
 
 Authentication is an example of what naturally fits RPC. Sending an email notification is an example of what naturally fits an asynchronous operation. There may be a large gray area in the middle where both are candidates, each with their pros and cons.
 
@@ -181,6 +181,6 @@ When Service A publishes an OrderCreated event, that event automaticvally gets f
 
 Tomorrow when we add three new subscribers, it does not require any code changes to Service A.
 
-![Publish-Subscribe](/img/docs/pub-sub.png)
+![Publish-Subscribe](/img/docs/concepts/pub-sub.png)
 
 Publish-subscribe is most often used to broadcast events. An event is simply a fact about something that has happened in the system. Events can cause a chain reaction of activity where more events are emitted and reacted to.

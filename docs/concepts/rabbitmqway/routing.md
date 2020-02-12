@@ -40,7 +40,7 @@ When no exchange name is given, the assumed exchange is the amq.default exchange
 
 For example, the eCommerce site sends a command to the Accounts service to create an account.
 
-![Default exchange](/img/docs/exchange-default.png)
+![Default exchange](/img/docs/concepts/exchange-default.png)
 
 ### Fanout exchange
 
@@ -48,7 +48,7 @@ Use this exchange when you want multiple queues to receive every message without
 
 For example, both the three different services all want to consume all events. Each service has its own queue and each queue is bound to the fanout exchange.
 
-![Fanout exchange](/img/docs/exchange-fanout.png)
+![Fanout exchange](/img/docs/concepts/exchange-fanout.png)
 
 ### Topic exchange
 
@@ -79,13 +79,13 @@ We can create bindings with the following binding keys:
 
 This allows for publish-subscribe where each subscribing service filters out the messages it doesn't care about.
 
-![Topic exchange](/img/docs/exchange-topic.png)
+![Topic exchange](/img/docs/concepts/exchange-topic.png)
 
 ### Direct exchange
 
 This exchange is a routing rule like the topic exchange except that it only supports exact match on routing keys. It has slightly higher performance than the topic exchange which would be the reason why you might choose it over the more flexible topic exchange.
 
-![Direct exchange](/img/docs/exchange-direct.png)
+![Direct exchange](/img/docs/concepts/exchange-direct.png)
 
 ### Header exchange
 
@@ -104,4 +104,4 @@ We could specify a match on one, both or either.
 
 This exchange is useful when you cannot express all routing within a routing key.
 
-![Headers exchange](/img/docs/exchange-headers.png)
+![Headers exchange](/img/docs/concepts/exchange-headers.png)

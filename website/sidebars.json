@@ -17,7 +17,7 @@
       "concepts/reliable-messaging",
       "concepts/high-availability",
       "concepts/protocols",
-      "concepts/moving-messages"],
+      "concepts/streaming-across-clusters"],
     "Developer Guide": ["developer-guide/index"],
     "Operations Guide": ["operations-guide/index"],
     "Enterprise Edition": ["enterprise/index"]
