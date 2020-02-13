@@ -1,6 +1,18 @@
 {
   "docs": {
     "Overview": ["overview/index", "overview/intro"],
+    "Getting Started": [
+      "getting-started/start-rabbitmq",
+      "getting-started/publish-message",
+      "getting-started/consume-message",
+      "getting-started/query-queue-infos",
+      "getting-started/use-management-ui",
+      "getting-started/use-perftest",
+      "getting-started/configure-rabbitmq",
+      "getting-started/configure-queue-length-limit-policy",
+      "getting-started/cluster-two-nodes",
+      "getting-started/use-mqtt"
+    ],
     "Concepts": ["concepts/index", 
       "concepts/communication-patterns",
       {
