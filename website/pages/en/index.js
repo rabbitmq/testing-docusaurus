@@ -99,7 +99,7 @@ See how other people are using RabbitMQ:
 <div id="UfEmbeddedHub1501190831892"></div>
 <script>window._ufHubConfig = window._ufHubConfig || [];window._ufHubConfig.push({'containers':{'app':'#UfEmbeddedHub1501190831892'},'collection':'453624','openLink':function(url){window.open(url);},'lazyloader':{'itemDisplayLimit':3,'maxTilesPerRow':3,'maxItemsTotal':3},'tileSize':'small','enablePageTracking':false,'baseUrl':'https://content.pivotal.io/','filesUrl':'https://content.cdntwrk.com/','generatedAtUTC':'2017-07-27 21:26:47'});</script>
 <script>(function(d,t,u){function load(){var s=d.createElement(t);s.src=u;d.body.appendChild(s);}if(window.addEventListener){window.addEventListener('load',load,false);}else if(window.attachEvent){window.attachEvent('onload',load);}else{window.onload=load;}}(document,'script','https://content.pivotal.io/hubsFront/embed_collection'));</script>
-<p id='morelinkafterufembed'><a href='https://content.pivotal.io/rabbitmq'>More <span className="arrow"></span></a></p>
+<p id='morelinkafterufembed'><a href='https://content.pivotal.io/rabbitmq'>More <span className="link-arrow"></span></a></p>
 `}
         </Md>
         <div id='news'>
@@ -108,13 +108,13 @@ See how other people are using RabbitMQ:
               language="en"
               config={blogSidebarConfig}
             />
-            <p><a href='/blog/'>More updates<span className='arrow'></span></a></p>
+            <p><a href='/blog/'>More updates<span className='link-arrow'></span></a></p>
           </div>
           <div id='twitterfeed'>
             <h2>Tweets</h2>
             <a className="twitter-timeline" href="https://twitter.com/RabbitMQ" data-chrome="noheader nofooter noborders transparent noscrollbar" data-tweet-limit='2'></a>
             <script src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
-            <p><a href='https://twitter.com/RabbitMQ'>More tweets<span className='arrow'></span></a></p>
+            <p><a href='https://twitter.com/RabbitMQ'>More tweets<span className='link-arrow'></span></a></p>
           </div>
         </div>
       </div>
