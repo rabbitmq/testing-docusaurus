@@ -809,21 +809,37 @@ input#search_input_react:active {
   display: flex;
   padding-left: 0;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .doc-tiles + ul li {
   list-style-type: none;
-  margin: 8px;
-  padding: 10px 0;
-  width: 200px;
-  border: solid 1px $primaryColor;
-  border-radius: 8px;
+  margin: 10px;
+  width: 220px;
+  height: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: stretch;
+  background-color: $primaryBg;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.doc-tiles + ul li p {
+  margin: 0;
+  padding: 5px;
+}
+
+.doc-tiles + ul li h2 {
+  margin: 20px 5px 20px;
+}
+
+.doc-tiles + ul li p:first-child {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $secondaryBg;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .doc-tiles + ul img {
