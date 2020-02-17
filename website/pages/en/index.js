@@ -1,6 +1,6 @@
 // vim:sw=2:et:
 /**
- * Copyright (c) 2017-present, Facebook, Inc.
+ * Copyright (c) 2020-present, Pivotal Software, Inc.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -9,47 +9,7 @@
 const React = require('react');
 
 const BlogSidebar = require('../../core/BlogSidebar.js');
-//const CompLibrary = require('../../core/CompLibrary.js');
-
-const renderMarkdown = require('../../core/renderMarkdown.js');
-
-class Md extends React.Component {
-  content() {
-    return React.Children.map(this.props.children, child => {
-      if (typeof child === 'string') {
-        //return 'string:' + child;
-        return renderMarkdown(child);
-      }
-
-      return child;
-    });
-  }
-
-  render() {
-    const Container = this.props.container;
-    if (this.props.id && this.props.className) {
-      return <Container
-               id={this.props.id}
-               className={this.props.className}
-               dangerouslySetInnerHTML={{__html: this.content()}} />;
-    } else if (this.props.id) {
-      return <Container
-               id={this.props.id}
-               dangerouslySetInnerHTML={{__html: this.content()}} />;
-    } else if (this.props.className) {
-      return <Container
-               className={this.props.className}
-               dangerouslySetInnerHTML={{__html: this.content()}} />;
-    } else {
-      return <Container
-               dangerouslySetInnerHTML={{__html: this.content()}} />;
-    }
-  }
-}
-
-Md.defaultProps = {
-  container: 'div',
-};
+const Md = require(`${process.cwd()}/core/Md.js`);
 
 class HomeHero extends React.Component {
   render() {
