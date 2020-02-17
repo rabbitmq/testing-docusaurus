@@ -6,7 +6,7 @@ sidebar_label: Welcome to RabbitMQ Docs
 
 <div class="doc-tiles"></div>
 
-*   [![](/img/overview/why-rabbitmq.svg)](intro)
+*   [![](/img/concepts/rabbitmq-way.svg)](intro)
     ## [Why use RabbitMQ?](intro)
     Get an overview of the benefit of using RabbitMQ.
 

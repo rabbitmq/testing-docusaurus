@@ -19,11 +19,11 @@
         "type": "subcategory",
         "label": "RabbitMQ Concepts",
         "ids": [
-          "concepts/rabbitmqway/index",
-          "concepts/rabbitmqway/routing",
-          "concepts/rabbitmqway/queues",
-          "concepts/rabbitmqway/connections",
-          "concepts/rabbitmqway/consumers"
+          "concepts/rabbitmq-way/index",
+          "concepts/rabbitmq-way/routing",
+          "concepts/rabbitmq-way/queues",
+          "concepts/rabbitmq-way/connections",
+          "concepts/rabbitmq-way/consumers"
         ]
       },
       "concepts/reliable-messaging",
