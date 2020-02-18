@@ -10,18 +10,27 @@ sidebar_label: Welcome to RabbitMQ Docs
     ## [Why use RabbitMQ?](intro)
     Get an overview of the benefit of using RabbitMQ.
 
-*   [![](/img/overview/concepts.svg)](/docs/concepts/)
-    ## [Concepts](/docs/concepts/)
+*   [![](/img/overview/install.svg)](../install/)
+    ## [Install](../install/)
+    How install RabbitMQ<br/>
+    (or simply test it without installing).
+
+*   [![](/img/overview/getting-started.svg)](../getting-started/start-rabbitmq)
+    ## [Getting started](../getting-started/start-rabbitmq)
+    Getting started with all RabbitMQ important features!
+
+*   [![](/img/overview/concepts.svg)](../concepts/)
+    ## [Concepts](../concepts/)
     How message routing works in general.
 
-*   [![](/img/overview/enterprise.svg)]()
-    ## [Enterprise Edition]()
+*   [![](/img/overview/enterprise.svg)](../enterprise/)
+    ## [Enterprise Edition](../enterprise/)
     The version of RabbitMQ with more advanced features.
 
-*   [![](/img/overview/developer-guide.svg)](/docs/developer/)
-    ## [Developer guide](/docs/developer/)
+*   [![](/img/overview/developer-guide.svg)](../developer-guide/)
+    ## [Developer guide](../developer-guide/)
     Documentation of RabbitMQ targetted at developers.
 
-*   [![](/img/overview/operations-guide.svg)](/docs/operations/)
-    ## [Operations guide](/docs/operations/)
+*   [![](/img/overview/operations-guide.svg)](../operations-guide/)
+    ## [Operations guide](../operations-guide/)
     Documentation of RabbitMQ targetted at admins.

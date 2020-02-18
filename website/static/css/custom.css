@@ -836,7 +836,9 @@ input#search_input_react:active {
   padding: 5px;
 }
 
-.doc-tiles + ul li h2 {
+.doc-tiles + ul li h2,
+.doc-tiles + ul li h3 {
+  font-size: 24px;
   margin: 20px 5px 20px;
 }
 
@@ -855,6 +857,55 @@ input#search_input_react:active {
   color: $textColor;
   font-weight: 500;
   text-decoration: none;
+}
+
+/* -------------------------------------------------------------------
+ * Erlang requirements highlight.
+ * ------------------------------------------------------------------- */
+
+.erlang-requirements + ul {
+  display: flex;
+  padding-left: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.erlang-requirements + ul li {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+  min-width: 160px;
+  min-height: 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  background-color: $primaryBg;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.erlang-requirements + ul li p {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.erlang-requirements + ul li h2,
+.erlang-requirements + ul li h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 18px 0;
+}
+
+.erlang-requirements + ul li:first-child {
+  background-color: #f7d76f;
+}
+
+.erlang-requirements + ul li:last-child {
+  background-color: #a1cf6b;
 }
 
 /* ------------------------------------------------------------------- */

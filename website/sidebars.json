@@ -1,6 +1,15 @@
 {
   "docs": {
-    "Overview": ["overview/index", "overview/intro"],
+    "Overview": [
+      "overview/index",
+      "overview/intro"
+    ],
+    "Install": [
+      "install/index",
+      "install/debian",
+      "install/precompiled",
+      "install/erlang"
+    ],
     "Getting Started": [
       "getting-started/start-rabbitmq",
       "getting-started/publish-message",
@@ -13,7 +22,8 @@
       "getting-started/cluster-two-nodes",
       "getting-started/use-mqtt"
     ],
-    "Concepts": ["concepts/index", 
+    "Concepts": [
+      "concepts/index",
       "concepts/communication-patterns",
       {
         "type": "subcategory",
@@ -29,7 +39,8 @@
       "concepts/reliable-messaging",
       "concepts/high-availability",
       "concepts/protocols",
-      "concepts/streaming-across-clusters"],
+      "concepts/streaming-across-clusters"
+    ],
     "Developer Guide": ["developer-guide/index"],
     "Operations Guide": ["operations-guide/index"],
     "Enterprise Edition": ["enterprise/index"]
