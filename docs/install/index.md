@@ -6,10 +6,25 @@ title: How to get RabbitMQ
 ## Testing RabbitMQ (without installing)
 
 You can play with RabbitMQ to help you decide if it is the right tool
-for you. There are two easy ways to quickly get a running RabbitMQ node:
+for you.
 
-* [Precompiled binaries](precompiled)
-* [Docker](docker)
+**The easiest to get RabbitMQ:**
+
+```sh
+curl -sSf https://rabbitmq.netlify.com/get-rabbitmq.sh | sh
+```
+
+For more detailed instructions to try RabbitMQ, here are two approaches.
+The script above implements the first one.
+
+<div class="doc-tiles"></div>
+
+*   [![](/img/install/package.svg)](precompiled)
+    ### [Precompiled binaries](precompiled)
+    For both Unix systems and Microsoft Windows
+
+*   [![](/img/logo/docker.svg)](docker)
+    ### [Docker](docker)
 
 Those methods are also useful when you want to run RabbitMQ as an
 unprivileged user.
