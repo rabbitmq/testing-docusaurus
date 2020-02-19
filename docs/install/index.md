@@ -3,7 +3,7 @@ id: index
 title: How to get RabbitMQ
 ---
 
-## Testing RabbitMQ (without installing)
+## Trying RabbitMQ <span class="h-addition">(without installing)</span>
 
 You can play with RabbitMQ to help you decide if it is the right tool
 for you.

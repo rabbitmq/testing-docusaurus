@@ -95,6 +95,17 @@ a {
   }
 }
 
+h2 .h-addition {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 735px) {
+  h2 .h-addition {
+    margin-top: 6px;
+    display: block;
+  }
+}
+
 /* -------------------------------------------------------------------
  * Header.
  * ------------------------------------------------------------------- */
