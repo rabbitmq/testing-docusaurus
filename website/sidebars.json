@@ -14,6 +14,7 @@
       "install/macos",
       "install/precompiled",
       "install/docker",
+      "install/build",
       "install/erlang"
     ],
     "Getting Started": [
