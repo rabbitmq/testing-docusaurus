@@ -1,7 +1,7 @@
 ---
 id: debian
 title: Install on Debian and Ubuntu
-sidebar_label: Debian and Ubuntu
+sidebar_label: Debian
 ---
 
 ## Provide Erlang/OTP

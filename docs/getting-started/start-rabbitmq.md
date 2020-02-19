@@ -4,7 +4,7 @@ title: Start RabbitMQ
 ---
 
 This series of Getting Started steps considers that you already
-[installed RabbitMQ](/get-rabbitmq).
+[installed RabbitMQ](../install/).
 
 The very first thing will be to start RabbitMQ. Once this is done, we
 will:

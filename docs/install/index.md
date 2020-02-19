@@ -38,6 +38,9 @@ unprivileged user.
     ## [FreeBSD](freebsd)
     FreeBSD and derivatives
 
+*   [![](/img/logo/apple.svg)](macos)
+    ## [macOS](macos)
+
 ## Build from source
 
 If you want to work on RabbitMQ or if you are a package maintainer, you

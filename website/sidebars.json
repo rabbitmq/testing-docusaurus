@@ -7,7 +7,13 @@
     "Install": [
       "install/index",
       "install/debian",
+      "install/redhat",
+      "install/opensuse",
+      "install/windows",
+      "install/freebsd",
+      "install/macos",
       "install/precompiled",
+      "install/docker",
       "install/erlang"
     ],
     "Getting Started": [
