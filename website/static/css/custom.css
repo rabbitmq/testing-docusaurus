@@ -908,6 +908,14 @@ input#search_input_react:active {
   background-color: #a1cf6b;
 }
 
+/* -------------------------------------------------------------------
+ * Erlang requirements highlight.
+ * ------------------------------------------------------------------- */
+
+.getting-started-certificate + p img {
+  width: 30%;
+}
+
 /* ------------------------------------------------------------------- */
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {

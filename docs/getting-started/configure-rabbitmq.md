@@ -9,3 +9,5 @@ If you reached this tutorial:
 
 Now, RabbitMQ offers many settings you may want to tweak to adapt it to
 your workload. Let's see how this is done with two simple settings.
+
+> **TODO**: Write this page.

@@ -15,8 +15,8 @@ sidebar_label: Welcome to RabbitMQ Docs
     How install RabbitMQ<br/>
     (or simply test it without installing).
 
-*   [![](/img/overview/getting-started.svg)](../getting-started/start-rabbitmq)
-    ## [Getting started](../getting-started/start-rabbitmq)
+*   [![](/img/overview/getting-started.svg)](../getting-started/)
+    ## [Getting started](../getting-started/)
     Getting started with all RabbitMQ important features!
 
 *   [![](/img/overview/concepts.svg)](../concepts/)

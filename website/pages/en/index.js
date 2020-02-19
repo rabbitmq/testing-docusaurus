@@ -108,7 +108,7 @@ Supports [multiple messaging protocols](/protocols.html),
 
 ## Developer Experience
 
-Deploy with [BOSH, Chef, Docker and Puppet](/download.html). Develop
+Deploy with [BOSH, Chef, Docker and Puppet](/docs/install/). Develop
 cross-language messaging with favorite programming languages such
 as: Java, .NET, PHP, Python, JavaScript, Ruby, Go, [and many
 others](/devtools.html).
@@ -174,11 +174,11 @@ class GetStarted extends React.Component {
           <h1>Get Started</h1>
           <div className='tiles'>
             <div className='tile'>
-              <a className='btn btn-secondary' href='/download.html'>Download + Installation</a>
+              <a className='btn btn-secondary' href='/docs/install/'>Download + Installation</a>
               <p>Servers and clients for popular operating systems and languages</p>
             </div>
             <div className='tile'>
-              <a className='btn btn-primary' href='/getstarted.html'>RabbitMQ Tutorials</a>
+              <a className='btn btn-primary' href='/docs/getting-started/'>RabbitMQ Tutorials</a>
               <p>Hands-on examples to get you started with RabbitMQ</p>
             </div>
           </div>

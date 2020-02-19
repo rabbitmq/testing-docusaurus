@@ -1,7 +1,6 @@
 ---
 id: index
-title: How to install RabbitMQ
-sidebar_label: Install overview
+title: How to get RabbitMQ
 ---
 
 ## Testing RabbitMQ (without installing)
