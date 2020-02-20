@@ -49,8 +49,150 @@
       "concepts/protocols",
       "concepts/streaming-across-clusters"
     ],
-    "Developer Guide": ["developer-guide/index"],
+    "Developer Guide": [
+      "developer-guide/index"
+    ],
     "Operations Guide": ["operations-guide/index"],
     "Enterprise Edition": ["enterprise/index"]
+  },
+  "Developer Guide": {
+    "Developer Guides": [
+      "developer-guide/guides/index",
+      {
+        "type": "subcategory",
+        "label": "Routing Guide",
+        "ids": [
+          "developer-guide/guides/routing-guide/index",
+          "developer-guide/guides/routing-guide/point-to-point",
+          "developer-guide/guides/routing-guide/pub-sub-fanout",
+          "developer-guide/guides/routing-guide/pub-sub-others",
+          "developer-guide/guides/routing-guide/multi-layered",
+          "developer-guide/guides/routing-guide/public-private-exchange",
+          "developer-guide/guides/routing-guide/sharding",
+          "developer-guide/guides/routing-guide/ephemeral",
+          "developer-guide/guides/routing-guide/priority",
+          "developer-guide/guides/routing-guide/rpc",
+          "developer-guide/guides/routing-guide/delayed-messaging",
+          "developer-guide/guides/routing-guide/retry-messaging"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Reliability Guide",
+        "ids": [
+          "developer-guide/guides/reliability-guide/index",
+          "developer-guide/guides/reliability-guide/robust-systems",
+          "developer-guide/guides/reliability-guide/safety-in-flight",
+          "developer-guide/guides/reliability-guide/safety-at-rest",
+          "developer-guide/guides/reliability-guide/avoiding-overload",
+          "developer-guide/guides/reliability-guide/outbox-pattern"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Performance Guide",
+        "ids": [
+          "developer-guide/guides/performance-guide/index",
+          "developer-guide/guides/performance-guide/safety-vs-performance",
+          "developer-guide/guides/performance-guide/flow-control",
+          "developer-guide/guides/performance-guide/classic-vs-replicated-queues",
+          "developer-guide/guides/performance-guide/queue-host"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Ecosystem Guide",
+        "ids": [
+          "developer-guide/guides/ecosystem-guide/index",
+          "developer-guide/guides/ecosystem-guide/client-libraries",
+          "developer-guide/guides/ecosystem-guide/microservice-frameworks",
+          "developer-guide/guides/ecosystem-guide/stream-processing",
+          "developer-guide/guides/ecosystem-guide/work-orchestration",
+          "developer-guide/guides/ecosystem-guide/integrations"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Multi-DC Guide",
+        "ids": [
+          "developer-guide/guides/multi-dc-guide/index",
+          "developer-guide/guides/multi-dc-guide/hub-and-spoke",
+          "developer-guide/guides/multi-dc-guide/peer-clusters",
+          "developer-guide/guides/multi-dc-guide/adhoc"
+        ]
+      }
+    ],
+    "Developer Reference": [
+      "developer-guide/reference/index",
+      {
+        "type": "subcategory",
+        "label": "Connections and Channels",
+        "ids": [
+          "developer-guide/reference/connections/connections",
+          "developer-guide/reference/connections/channels"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Publishers",
+        "ids": [
+          "developer-guide/reference/publishers/index",
+          "developer-guide/reference/publishers/messages",
+          "developer-guide/reference/publishers/confirms",
+          "developer-guide/reference/publishers/failures",
+          "developer-guide/reference/publishers/throttling",
+          "developer-guide/reference/publishers/metrics",
+          "developer-guide/reference/publishers/troubleshooting"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Exchanges",
+        "ids": [
+          "developer-guide/reference/exchanges/index",
+          "developer-guide/reference/exchanges/alternate-exchange",
+          "developer-guide/reference/exchanges/deadletter-exchange",
+          "developer-guide/reference/exchanges/sharding"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Queues",
+        "ids": [
+          "developer-guide/reference/queues/index",
+          "developer-guide/reference/queues/classic-queues",
+          "developer-guide/reference/queues/classic-ha-queues",
+          "developer-guide/reference/queues/quorum-queues"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Consumers",
+        "ids": [
+          "developer-guide/reference/consumers/index"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Policies",
+        "ids": [
+          "developer-guide/reference/policies/index",
+          "developer-guide/reference/policies/reference"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Federation and Shovels",
+        "ids": [
+          "developer-guide/reference/federation-shovel/index",
+          "developer-guide/reference/federation-shovel/federation",
+          "developer-guide/reference/federation-shovel/federated-exchanges",
+          "developer-guide/reference/federation-shovel/federated-queues",
+          "developer-guide/reference/federation-shovel/shovels",
+          "developer-guide/reference/federation-shovel/dynamic-shovels"
+        ]
+      },
+      "developer-guide/reference/virtual-hosts"
+    ]
   }
 }
