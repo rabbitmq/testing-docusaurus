@@ -3,4 +3,103 @@ id: index
 title: Operations Guides
 ---
 
-TODO
+- Reference
+    - Installation
+        - All Packages and Repositories
+        - Debian and Ubuntu
+        - RHEL, CentOS, Fedora
+        - Windows
+        - Generic UNIX Binary Build
+        - MacOS via Standalone Binary Build
+        - MacOS via Homebrew
+        - Amazon EC2
+        - Solaris
+        - Configuration Management Tools
+        - Docker
+        - Kubernetes
+        - Package Signatures
+        - Supported Erlang/OTP Versions
+        - Supported RabbitMQ Versions
+        - Changelog
+        - Snapshot (Nightly) Builds
+    - Upgrades and OS Patching
+        - Full Cluster Upgrade/Restart
+        - Rolling Upgrades/Restarts
+        - Rolling Back?
+    - Configuration
+        - Reference
+        - File and Directory Locations
+        - Environment Variables
+        - Runtime Parameters
+    - CLI Tools
+        - Overview
+        - rabbitmqctl
+        - rabbitmqadmin
+        - rabbitmqqueues
+    - Multi DC and Multi-Cluster
+        - Intro
+        - Federation
+        - Shovel
+        - Securing Multi-Cluster Communications
+    - Monitoring/Observability
+        - Management UI and HTTP API
+        - Logging
+        - Metrics
+        - Health Checks
+        - Prometheus Support
+        - InfluxDB Support
+        - Grafana
+        - Troubleshooting guidance
+        - Client Connections
+        - AMQP 0-9-1 Channels
+        - Internal Event Exchange
+        - Per Virtual Host Limits
+        - Message Tracing
+        - Capturing Traffic with Wireshark
+    - Security
+        - Authentication and Authorisation
+            - Authentication and authorisation Backends
+            - Authentication Mechanisms
+            - Virtual Hosts
+            - Credentials and Passwords
+            - LDAP
+            - x509 Certificate-based Authentication
+            - Validated User ID
+            - Authentication Failure Notifications
+        - Networking and TLS
+            - Client Connections
+            - Networking
+            - Troubleshooting Network Connectivity
+            - Using TLS for Client Connections
+            - Using TLS for Inter-node Traffic
+            - Troubleshooting TLS
+- Guides
+    - Production and Day Two Guides
+        - Production Checklist
+        - Monitoring with Prometheus and Grafana
+        - Monitoring with Elastic
+        - Disaster Recovery Strategies
+        - Troubleshooting Guide
+    - Reliability Guide
+        - Intro
+        - Safety At-Rest
+        - Avoiding Overload
+        - Understanding Flow Control
+        - Multi-DC Failovers??
+    - Performance Guide
+        - Intro
+        - Queue Types and Performance
+        - CPU
+        - Memory 
+        - Disk
+        - Network
+        - Docker
+    - Upgrade Guide
+        - Intro
+        - High Availability Upgrade Strategies
+            - Rolling Upgrades
+            - Blue/Green Deployment Upgrades
+            - Cluster Expansion Upgrades
+        - Data Safe Upgrade Strategies
+            - Full Cluster Upgrade
+            - Blue/Green Deployment Upgrades
