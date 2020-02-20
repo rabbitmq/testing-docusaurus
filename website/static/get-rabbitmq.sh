@@ -12,9 +12,6 @@ GEN_UNIX_DIR=rabbitmq_server-$RABBITMQ_VERSION
 GEN_UNIX_FILE=rabbitmq-server-generic-unix-$RABBITMQ_VERSION.tar.xz
 GEN_UNIX_URL=https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/$GEN_UNIX_FILE
 
-usage() {
-}
-
 main() {
     downloader --check
     need_cmd mktemp
