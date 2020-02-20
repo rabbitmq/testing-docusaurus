@@ -8,10 +8,10 @@ title: How to get RabbitMQ
 You can play with RabbitMQ to help you decide if it is the right tool
 for you.
 
-**The easiest to get RabbitMQ:**
+**The easiest to try RabbitMQ:**
 
 ```sh
-curl -sSf https://rabbitmq.netlify.com/get-rabbitmq.sh | sh
+curl -sSf https://rabbitmq.netlify.com/try-rabbitmq.sh | sh
 ```
 
 For more detailed instructions to try RabbitMQ, here are two approaches.

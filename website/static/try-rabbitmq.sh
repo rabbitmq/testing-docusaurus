@@ -32,6 +32,7 @@ main() {
     local _dir
     _dir="$(mktemp -d 2>/dev/null || ensure mktemp -d -t rabbitmq)"
     local _file="${_dir}/${GEN_UNIX_FILE}"
+    local _rmqdir="${_dir}/$GEN_UNIX_DIR"
 
     # 2. Download RabbitMQ.
     local _url="${GEN_UNIX_URL}"
@@ -53,36 +54,57 @@ main() {
     cd "$_dir"
     tar xf "$_file"
 
-    # 4. Check RabbitMQ CLI can run.
+    # 4. Enable the management plugin.
     if $_ansi_escapes_are_valid; then
-        printf "\033[1minfo:\033[0m checking CLI\n" 1>&2
+        printf "\033[1minfo:\033[0m enabling management web UI\n" 1>&2
     else
-        printf '%s\n' 'info: checking CLI' 1>&2
+        printf '%s\n' 'info: enabling management web UI' 1>&2
     fi
-    local _rmqdir="${_dir}/$GEN_UNIX_DIR"
-    ensure "$_rmqdir"/sbin/rabbitmqctl help >/dev/null
+    ensure "$_rmqdir"/sbin/rabbitmq-plugins \
+        --quiet \
+        enable \
+        --offline \
+        rabbitmq_management >/dev/null
 
-    # 5. Display instructions to start RabbitMQ.
-    if $_ansi_escapes_are_valid; then
-        printf "\n\033[1;32mRabbitMQ ${RABBITMQ_VERSION} is ready to run!\033[0m\n" 1>&2
-    else
-        printf "\nRabbitMQ ${RABBITMQ_VERSION} is ready to run!\n" 1>&2
-    fi
-
+    # 5. Start RabbitMQ.
     cat <<EOF
 
-To start it:
-  $_rmqdir/sbin/rabbitmq-server
+,---------------------------------------------------------------------
+| RabbitMQ is installed in:
+| $_rmqdir
+| 
+| Configuration files:
+| $_rmqdir/etc
+| 
+| Log files:
+| $_rmqdir/var/log/rabbitmq
+| 
+| Once RabbitMQ has started below:
+| 
+|   * You can stop it by typing Ctrl+C in this terminal, or by running:
+|     $_rmqdir/sbin/rabbitmqctl stop
+| 
+|   * You can restart it later by running:
+|     $_rmqdir/sbin/rabbitmq-server
+| 
+|   * You can enable and disable plugins using:
+|     $_rmqdir/sbin/rabbitmq-plugins
+| 
+|   * The management web UI is available at:
+|     http://localhost:15672
+| 
+|     Login: guest
+|     Password: guest
+\`--------------------------------------------------------------------
 
-Log files will be in:
-  $_rmqdir/var/log/rabbitmq
-
-Configuration is in:
-  $_rmqdir/etc/rabbitmq
-
-CLI is in:
-  $_rmqdir/sbin
 EOF
+
+    if $_ansi_escapes_are_valid; then
+        printf "\033[1minfo:\033[0m starting RabbitMQ\n" 1>&2
+    else
+        printf '%s\n' 'info: starting RabbitMQ' 1>&2
+    fi
+    exec "$_rmqdir"/sbin/rabbitmq-server
 }
 
 # --------------------------------------------------------------------
