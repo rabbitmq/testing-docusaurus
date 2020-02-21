@@ -6,11 +6,7 @@
 
 set -u
 
-RABBITMQ_VERSION=3.8.2
-
-GEN_UNIX_DIR=rabbitmq_server-$RABBITMQ_VERSION
-GEN_UNIX_FILE=rabbitmq-server-generic-unix-$RABBITMQ_VERSION.tar.xz
-GEN_UNIX_URL=https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/$GEN_UNIX_FILE
+LATEST_BRANCH=3.8
 
 main() {
     downloader --check
@@ -31,13 +27,46 @@ main() {
     # 1. Create temporary directory (for download & Erlang build)
     local _dir
     _dir="$(mktemp -d 2>/dev/null || ensure mktemp -d -t rabbitmq)"
-    local _file="${_dir}/${GEN_UNIX_FILE}"
-    local _rmqdir="${_dir}/$GEN_UNIX_DIR"
 
-    # 2. Download RabbitMQ.
-    local _url="${GEN_UNIX_URL}"
+    # 2. Query latest RabbitMQ version.
     if $_ansi_escapes_are_valid; then
-        printf "\33[1minfo:\33[0m downloading generic-unix archive\n" 1>&2
+        printf "\033[1minfo:\033[0m querying latest ${LATEST_BRANCH}.x version\n" 1>&2
+    else
+        printf '%s\n' "info: querying latest ${LATEST_BRANCH}.x version" 1>&2
+    fi
+    local _tags_api=https://api.github.com/repos/rabbitmq/rabbitmq-server/git/matching-refs/tags/v${LATEST_BRANCH};
+    local _tags_list="${_dir}/tags.json"
+    ensure downloader "$_tags_api" "$_tags_list"
+
+    local rmq_version=$(ensure awk '
+/"ref":/ {
+    tag = $0;
+    sub(/.*\/tags\/v/, "", tag);
+    sub(/".*$/, "", tag);
+    if (tag ~ /^[0-9]+\.[0-9]+\.[0-9]+$/) {
+        latest = tag;
+    }
+}
+END {
+    print latest;
+}' "${_tags_list}")
+    if $_ansi_escapes_are_valid; then
+        printf "\033[1minfo:\033[0m latest ${LATEST_BRANCH}.x version: ${rmq_version}\n" 1>&2
+    else
+        printf '%s\n' "info: latest ${LATEST_BRANCH}.x version: ${rmq_version}" 1>&2
+    fi
+
+    local gen_unix_dir=rabbitmq_server-$rmq_version
+    local gen_unix_file=rabbitmq-server-generic-unix-$rmq_version.tar.xz
+    local gen_unix_url=https://github.com/rabbitmq/rabbitmq-server/releases/download/v$rmq_version/$gen_unix_file
+
+    local _file="${_dir}/${gen_unix_file}"
+    local _rmqdir="${_dir}/$gen_unix_dir"
+
+    # 3. Download RabbitMQ.
+    local _url="${gen_unix_url}"
+    if $_ansi_escapes_are_valid; then
+        printf "\033[1minfo:\033[0m downloading generic-unix archive\n" 1>&2
     else
         printf '%s\n' 'info: downloading generic-unix archive' 1>&2
     fi
@@ -45,7 +74,7 @@ main() {
     ensure mkdir -p "$_dir"
     ensure downloader "$_url" "$_file"
 
-    # 3. Unpack RabbitMQ.
+    # 4. Unpack RabbitMQ.
     if $_ansi_escapes_are_valid; then
         printf "\033[1minfo:\033[0m unpacking generic-unix archive\n" 1>&2
     else
@@ -54,7 +83,7 @@ main() {
     cd "$_dir"
     tar xf "$_file"
 
-    # 4. Enable the management plugin.
+    # 5. Enable the management plugin.
     if $_ansi_escapes_are_valid; then
         printf "\033[1minfo:\033[0m enabling management web UI\n" 1>&2
     else
@@ -66,7 +95,7 @@ main() {
         --offline \
         rabbitmq_management >/dev/null
 
-    # 5. Start RabbitMQ.
+    # 6. Start RabbitMQ.
     cat <<EOF
 
 ,---------------------------------------------------------------------
