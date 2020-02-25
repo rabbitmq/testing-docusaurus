@@ -1,17 +1,23 @@
 {
   "docs": {
     "Overview": [
-      "overview/index",
+      "overview",
       "overview/intro"
     ],
     "Install": [
       "install/index",
-      "install/debian",
-      "install/redhat",
-      "install/opensuse",
-      "install/windows",
-      "install/freebsd",
-      "install/macos",
+      {
+        "type": "category",
+        "label": "Platforms",
+        "items": [
+          "install/debian",
+          "install/redhat",
+          "install/opensuse",
+          "install/windows",
+          "install/freebsd",
+          "install/macos"
+        ]
+      },
       "install/precompiled",
       "install/docker",
       "install/build",
@@ -34,9 +40,9 @@
       "concepts/index",
       "concepts/communication-patterns",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "RabbitMQ Concepts",
-        "ids": [
+        "items": [
           "concepts/rabbitmq-way/index",
           "concepts/rabbitmq-way/routing",
           "concepts/rabbitmq-way/queues",
@@ -59,9 +65,9 @@
     "Developer Guides": [
       "developer-guide/guides/index",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Routing Guide",
-        "ids": [
+        "items": [
           "developer-guide/guides/routing-guide/index",
           "developer-guide/guides/routing-guide/point-to-point",
           "developer-guide/guides/routing-guide/pub-sub-fanout",
@@ -77,9 +83,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Reliability Guide",
-        "ids": [
+        "items": [
           "developer-guide/guides/reliability-guide/index",
           "developer-guide/guides/reliability-guide/robust-systems",
           "developer-guide/guides/reliability-guide/safety-in-flight",
@@ -89,9 +95,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Performance Guide",
-        "ids": [
+        "items": [
           "developer-guide/guides/performance-guide/index",
           "developer-guide/guides/performance-guide/safety-vs-performance",
           "developer-guide/guides/performance-guide/flow-control",
@@ -100,9 +106,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Ecosystem Guide",
-        "ids": [
+        "items": [
           "developer-guide/guides/ecosystem-guide/index",
           "developer-guide/guides/ecosystem-guide/client-libraries",
           "developer-guide/guides/ecosystem-guide/microservice-frameworks",
@@ -112,9 +118,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Multi-DC Guide",
-        "ids": [
+        "items": [
           "developer-guide/guides/multi-dc-guide/index",
           "developer-guide/guides/multi-dc-guide/hub-and-spoke",
           "developer-guide/guides/multi-dc-guide/peer-clusters",
@@ -125,17 +131,17 @@
     "Developer Reference": [
       "developer-guide/reference/index",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Connections and Channels",
-        "ids": [
+        "items": [
           "developer-guide/reference/connections/connections",
           "developer-guide/reference/connections/channels"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Publishers",
-        "ids": [
+        "items": [
           "developer-guide/reference/publishers/index",
           "developer-guide/reference/publishers/messages",
           "developer-guide/reference/publishers/confirms",
@@ -146,9 +152,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Exchanges",
-        "ids": [
+        "items": [
           "developer-guide/reference/exchanges/index",
           "developer-guide/reference/exchanges/alternate-exchange",
           "developer-guide/reference/exchanges/deadletter-exchange",
@@ -156,9 +162,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Queues",
-        "ids": [
+        "items": [
           "developer-guide/reference/queues/index",
           "developer-guide/reference/queues/classic-queues",
           "developer-guide/reference/queues/classic-ha-queues",
@@ -166,24 +172,24 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Consumers",
-        "ids": [
+        "items": [
           "developer-guide/reference/consumers/index"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Policies",
-        "ids": [
+        "items": [
           "developer-guide/reference/policies/index",
           "developer-guide/reference/policies/reference"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Federation and Shovels",
-        "ids": [
+        "items": [
           "developer-guide/reference/federation-shovel/index",
           "developer-guide/reference/federation-shovel/federation",
           "developer-guide/reference/federation-shovel/federated-exchanges",

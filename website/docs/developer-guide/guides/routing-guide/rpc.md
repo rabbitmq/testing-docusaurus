@@ -1,5 +1,5 @@
 ---
-id: rpc-routing
+id: rpc
 title: RPC / Reply To Queues
 ---
 

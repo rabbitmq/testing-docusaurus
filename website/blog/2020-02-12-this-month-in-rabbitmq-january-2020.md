@@ -1,5 +1,5 @@
 ---
-title: This Month in RabbitMQ: January 2020
+title: "This Month in RabbitMQ: January 2020"
 author: Michael Klishin
 ---
 

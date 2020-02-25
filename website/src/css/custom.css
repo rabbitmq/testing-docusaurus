@@ -7,11 +7,20 @@
  *
  */
 
-/* your custom css */
 body {
   font-family: $myFont;
   line-height: 1.6em;
-  color: $textColor;
+  color: #585858;
+}
+
+:root {
+  --ifm-color-primary: #ff6600;
+  --ifm-color-primary-dark: #e65c00;
+  --ifm-color-primary-darker: #d95700;
+  --ifm-color-primary-darkest: #b34700;
+  --ifm-color-primary-light: #ff751a;
+  --ifm-color-primary-lighter: #ff7d26;
+  --ifm-color-primary-lightest: #ff944d;
 }
 
 /* -------------------------------------------------------------------
@@ -132,7 +141,7 @@ h2 .h-addition {
 }
 
 .fixedHeaderContainer header h3 {
-  color: $textColor;
+  color: #585858;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -170,7 +179,7 @@ h2 .h-addition {
 .navigationSlider .slidingNav ul li a {
   font-size: 16px;
   font-weight: 500;
-  color: $textColor;
+  color: #585858;
   background-color: inherit;
   border-right: 1px solid $primaryColor;
   padding: 22px 24px;
@@ -184,7 +193,7 @@ h2 .h-addition {
 }
 
 .navigationSlider .slidingNav ul li > a:focus {
-  color: $textColor;
+  color: #585858;
   background-color: $primaryBg;
 }
 
@@ -195,7 +204,7 @@ h2 .h-addition {
 
 .navigationSlider .slidingNav ul li.siteNavItemActive > a,
 .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
-  color: $textColor;
+  color: #585858;
   background-color: inherit;
 }
 
@@ -265,20 +274,20 @@ input#search_input_react {
 }
 
 .navSearchWrapper::before {
-  border-color: $textColor;
+  border-color: #585858;
 }
 
 .navSearchWrapper::after {
-  background-color: $textColor;
+  background-color: #585858;
 }
 
 input::placeholder {
-  color: $textColor;
+  color: #585858;
 }
 
 input#search_input_react:focus,
 input#search_input_react:active {
-  color: $textColor;
+  color: #585858;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -293,7 +302,7 @@ input#search_input_react:active {
   .reactNavSearchWrapper input#search_input_react,
   .reactNavSearchWrapper input#search_input_react:active,
   .reactNavSearchWrapper input#search_input_react:focus {
-    color: $textColor;
+    color: #585858;
     background-color: $primaryBg;
   }
 }
@@ -332,7 +341,7 @@ input#search_input_react:active {
 .toc .toggleNav,
 .toc .toggleNav .navGroup .navGroupCategoryTitle,
 .navBreadcrumb a, .navBreadcrumb span {
-  color: $textColor;
+  color: #585858;
 }
 
 .navBreadcrumb i {
@@ -340,7 +349,7 @@ input#search_input_react:active {
 }
 
 .line1, .line2, .line3 {
-  background-color: $textColor;
+  background-color: #585858;
   transition: 0s;
 }
 
@@ -451,7 +460,7 @@ input#search_input_react:active {
 }
 
 #hero #hero-pipeline-webinar {
-  background: url(../img/home/banner/pipeline/pipeline-desktop.svg) no-repeat bottom right;
+  background: url(/img/home/banner/pipeline/pipeline-desktop.svg) no-repeat bottom right;
   background-size: cover;
 }
 
@@ -500,7 +509,7 @@ input#search_input_react:active {
 @media(max-width: 909px) {
   #hero #hero-pipeline-webinar,
   #hero #hero-laika-case-study {
-    background: url(../img/home/banner/laika/Laika-tab.svg) no-repeat bottom right;
+    background: url(/img/home/banner/laika/Laika-tab.svg) no-repeat bottom right;
     padding: 70px 0;
   }
   #hero #hero-pipeline-webinar .container,
@@ -508,7 +517,7 @@ input#search_input_react:active {
     overflow: hidden;
   }
   #hero #hero-pipeline-webinar {
-    background: url(../img/home/banner/pipeline/pipeline-tab.svg) no-repeat bottom right;
+    background: url(/img/home/banner/pipeline/pipeline-tab.svg) no-repeat bottom right;
     background-size: cover;
   }
 }
@@ -516,7 +525,7 @@ input#search_input_react:active {
 @media(max-width: 660px) {
   #hero #hero-pipeline-webinar,
   #hero #hero-laika-case-study {
-    background: url(../img/home/banner/laika/Laika-iphone.svg) no-repeat bottom right;
+    background: url(/img/home/banner/laika/Laika-iphone.svg) no-repeat bottom right;
     padding: 60px 0 150px;
     background-size: 100%;
   }
@@ -527,7 +536,7 @@ input#search_input_react:active {
     text-align: center;
   }
   #hero #hero-pipeline-webinar {
-    background: url(../img/home/banner/pipeline/pipeline-phone.svg) no-repeat bottom right;
+    background: url(/img/home/banner/pipeline/pipeline-phone.svg) no-repeat bottom right;
     background-size: 100%;
     padding-bottom: 300px;
   }
@@ -567,7 +576,7 @@ input#search_input_react:active {
 #intro {
   max-width: 1180px;
   margin: 40px auto;
-  border-bottom: solid 2px $lineColor;
+  border-bottom: solid 2px #ededed;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -660,7 +669,7 @@ input#search_input_react:active {
 #intro #news {
   width: 31%;
   padding-left: 40px;
-  border-left: 2px solid $lineColor;
+  border-left: 2px solid #ededed;
 }
 
 #updates .docsNavContainer {
@@ -803,7 +812,7 @@ input#search_input_react:active {
 
 #community .tiles .tile:nth-child(2) {
   padding-left: 80px;
-  border-left: solid 2px $lineColor;
+  border-left: solid 2px #ededed;
 }
 
 #community .tiles .tile:nth-child(1) .btn {
@@ -865,7 +874,7 @@ input#search_input_react:active {
 }
 
 .doc-tiles + ul a {
-  color: $textColor;
+  color: #585858;
   font-weight: 500;
   text-decoration: none;
 }

@@ -8,7 +8,7 @@
 
 const React = require('react');
 
-const BlogSidebar = require('../../core/BlogSidebar.js');
+console.log(process.cwd());
 const Md = require(`${process.cwd()}/core/Md.js`);
 
 class HomeHero extends React.Component {
@@ -64,10 +64,6 @@ See how other people are using RabbitMQ:
         </Md>
         <div id='news'>
           <div id='updates'>
-            <BlogSidebar
-              language="en"
-              config={blogSidebarConfig}
-            />
             <p><a href='/blog/'>More updates<span className='link-arrow'></span></a></p>
           </div>
           <div id='twitterfeed'>

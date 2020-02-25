@@ -1,5 +1,5 @@
 ---
-id: classic-vs-replicated
+id: classic-vs-replicated-queues
 title: Classic vs Replicated Queues
 ---
 

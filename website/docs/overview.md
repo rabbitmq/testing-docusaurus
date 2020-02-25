@@ -1,5 +1,5 @@
 ---
-id: index
+id: overview
 title: Welcome to RabbitMQ Docs
 sidebar_label: Welcome to RabbitMQ Docs
 ---

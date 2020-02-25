@@ -1,5 +1,5 @@
 ---
-id: ephemeral-infrastructure
+id: ephemeral
 title: Ephemeral Exchanges and Queues
 ---
 

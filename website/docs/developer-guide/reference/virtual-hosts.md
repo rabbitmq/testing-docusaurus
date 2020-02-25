@@ -1,5 +1,5 @@
 ---
-id: index
+id: virtual-hosts
 title: Virtual Hosts
 ---
 
